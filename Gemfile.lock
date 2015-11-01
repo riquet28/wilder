@@ -166,6 +166,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.4)
+  rake
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
