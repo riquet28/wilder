@@ -8,12 +8,25 @@
 </head>
 <body>
 
-<%= render 'shared/navigation' %>
+<%= render 'shared/navigation.html.erb' %> 
 
-<%= yield %>
+<div id="main-container" class="container">
+  
+  <div class="row">
+    <div class="col-xs-12">
+      <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: "alert alert-#{name}" %>
+      <% end -%>
+    </div>
+  </div>
+        
+  <%= yield %>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+</div>
+
+<script type="text/javascript">
+	$('.alert').delay(4000).fadeOut();
+</script>
 
 </body>
 </html>
