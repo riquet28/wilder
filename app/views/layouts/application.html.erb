@@ -8,21 +8,25 @@
 </head>
 <body>
 
-<%= render 'shared/navigation.html.erb' %> 
+  <% if user_signed_in? %>
+    <%= render 'shared/navigation.html.erb' %>
+  <% else %>
+    <%= render 'shared/navconnexion.html.erb' %> 
+  <% end %>
 
-<div id="main-container" class="container">
+  <div id="main-container" class="container">
   
-  <div class="row">
-    <div class="col-xs-12">
-      <% flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, class: "alert alert-#{name}" %>
-      <% end -%>
+    <div class="row">
+      <div class="col-xs-12">
+        <% flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, class: "alert alert-#{name}" %>
+        <% end -%>
+      </div>
     </div>
-  </div>
         
-  <%= yield %>
+    <%= yield %>
 
-</div>
+  </div>
 
 <script type="text/javascript">
 	$('.alert').delay(4000).fadeOut();
