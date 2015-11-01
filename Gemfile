@@ -20,6 +20,8 @@ gem 'devise'
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'autoprefixer-rails'
+# Bootstrap Form
+gem 'bootstrap_form'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
