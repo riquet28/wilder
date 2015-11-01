@@ -17,6 +17,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # Gem perso
 # Devise
 gem 'devise'
+# Bootstrap
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'autoprefixer-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
