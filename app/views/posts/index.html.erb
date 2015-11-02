@@ -23,7 +23,7 @@
         <!-- ruby pour afficher tous les messages de tous les utilisateurs, ordre decroissant -->
         <% @posts.reverse.each do |post| %>
           <p style="color: red;">
-            Posté par <%= post.user.email %> à <%= creation_post(post) %> 
+            Posté par <%= post.user.email %> le <%= creation_post(post) %> 
           </p>
           <p style="color: blue;">
             <%= post.content %>
