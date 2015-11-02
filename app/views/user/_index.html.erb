@@ -1,0 +1,10 @@
+<h2>Liste des membres</h2>
+
+<% User.all.each do |user| %>
+<li><%= user.email %></li>
+<% end %>
+
+<% User.all.each do |user| %>
+<li><%= connecte(current_user) %></li>
+<% end %>
+
