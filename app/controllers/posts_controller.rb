@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @newpost = Post.new
+    @users = User.all
   end
 
   # GET /posts/1

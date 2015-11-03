@@ -1,6 +1,6 @@
 <h2>Liste des membres</h2>
 
-<% User.all.each do |user| %>
+<% @users.each do |user| %>
 <li><%= user.email %></li>
 <% end %>
 

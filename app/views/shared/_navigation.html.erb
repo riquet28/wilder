@@ -1,16 +1,19 @@
-<nav class="navbar navbar-inverse" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="/"><h2 class="titre-nav">Wilder <span>Projet</span></h2></a>
     </div>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><%= link_to "Deconnection", destroy_user_session_path, :method => :delete %></a></li>
-            
+    	<li><%= link_to "MUR", destroy_user_session_path %></li>
+    	<li><%= link_to "PROFIL", destroy_user_session_path %></li>
+    	<li><%= link_to "PROMOS", destroy_user_session_path %></li>
+    	<li><%= link_to "EMPLOI/STAGE", destroy_user_session_path %></li>
+      <li><%= link_to "DECONNECTION", destroy_user_session_path, :method => :delete %></li>
+           
     </ul>
   </div>
 </nav>
-
 
 
 
