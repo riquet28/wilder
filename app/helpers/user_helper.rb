@@ -1,7 +1,7 @@
 module UserHelper
 
 	def connecte(current_user)
-		if current_user
+		if user_signed_in?
 			"Connecté"
 		else
 			"Hors-ligne"

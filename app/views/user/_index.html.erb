@@ -4,7 +4,7 @@
 <li><%= user.email %></li>
 <% end %>
 
-<% User.all.each do |user| %>
+<% @users.all.each do |user| %>
 <li><%= connecte(current_user) %></li>
 <% end %>
 
