@@ -6,6 +6,8 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @newpost = Post.new
+    @users = User.all
   end
 
   # GET /posts/1
@@ -13,9 +15,13 @@ class PostsController < ApplicationController
   def show
   end
 
+  def messageposts
+    @post = Post.find(params[:id])
+  end
+
   # GET /posts/new
   def new
-    @post = Post.new
+    @posts = Post.new
   end
 
   # GET /posts/1/edit
@@ -25,12 +31,12 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
+    @newpost = Post.new(post_params)
 
     respond_to do |format|
-      if @post.save
+      if @newpost.save
         flash[:success] = 'Your Post was successfully created.'
-        format.html { redirect_to @post }
+        format.html { redirect_to @newpost }
         format.json { render :show, status: :created, location: @post }
       else
         flash[:danger] = 'There was a problem creating the Post.'
