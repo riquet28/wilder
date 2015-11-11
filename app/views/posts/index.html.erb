@@ -1,70 +1,110 @@
-<div class="row" style="margin-top: 70px;">
+<div class="container-fluid">
 
-  <div class="col-md-3" style="background-color:blue;">
-  
-    <div class="row login_box">
-      <div class="col-md-12 col-xs-12" align="center">
-        <div class="outter"><img src="http://lorempixel.com/output/people-q-c-100-100-1.jpg" class="image-circle"/></div>   
-          <h1>Hi Guest</h1>
-          <span>INDIAN</span>
-        </div>
-        <div class="col-md-6 col-xs-6 follow line" align="center">
-            <h3>
-                 125651 <br/> <span>FOLLOWERS</span>
-            </h3>
-        </div>
-        <div class="col-md-6 col-xs-6 follow line" align="center">
-            <h3>
-                 125651 <br/> <span>FOLLOWERS</span>
-            </h3>
-        </div>
-        <div class="col-md-12 col-xs-12 login_control">
-                
-          <div class="control">
-              <div class="label">Email Address</div>
-                <input type="text" class="form-control" value=" <%= current_user.email %>"/>
+  <div class="row" style="margin-top: 70px;">
+
+    <div class="col-md-3">
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Votre Profil</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <p><img src="http://www.1001avatars.net/_avatars/humour/008.jpg" alt="" class="img-responsive"></p>
+                </div>
+                <div class="col-md-6">
+                  <p><%= current_user.email %></p>
+                  <p><%= current_user.email %></p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-md-12">
+                  <p>Humeur : "Carpe Diem !!!</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer clearfix">
+              <div class="pull-right">
+                  <a href="#" class="btn btn-primary">Mettre à jour votre profil</a>
+              </div>
+            </div>
           </div>
-          
-          <div class="control">
-               <div class="label">Password</div>
-              <input type="password" class="form-control" value="123456"/>
-          </div>
-          <div align="center">
-               <button class="btn btn-orange">LOGIN</button>
+        </div>
+      </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-body">Message(s)
+          <span class="badge pull-right">12</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Vos amis<span class="badge pull-right">33</span></h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <ul class="list-unstyled">
+                    <li>ami1</li>
+                    <li>ami2</li>
+                    <li>ami3</li>
+                    <li>ami4</li>
+                    <li>ami5</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul class="pull-right list-unstyled">
+                    <li>connecté</li>
+                    <li>connecté</li>
+                    <li>connecté</li>
+                    <li>Hors-ligne</li>
+                    <li>Hors-ligne</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-          
+      </div>
+
     </div>
 
-  </div>
-
-  <div class="col-md-6" style="background-color:grey;">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">
-          <span class="glyphicon glyphicon-list-alt"></span>
-          Messages
-        </h3>
-      </div>
-      <div class="panel-body">
-        <!-- ruby pour afficher tous les messages de tous les utilisateurs, ordre decroissant -->
-        <% @posts.reverse.each do |post| %>
-          <p style="color: red;">
-            Posté par <%= post.user.email %> le <%= creation_post(post) %> 
-          </p>
-          <p style="color: blue;">
-            <%= post.content %>
-          </p>
-          <hr />
-        <% end %>
+    <div class="col-md-6" style="background-color:grey;">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <span class="glyphicon glyphicon-list-alt"></span>
+            Messages
+          </h3>
+        </div>
+        <div class="panel-body">
+          <!-- ruby pour afficher tous les messages de tous les utilisateurs, ordre decroissant -->
+          <% @posts.reverse.each do |post| %>
+            <p style="color: red;">
+              Posté par <%= post.user.email %> le <%= creation_post(post) %> 
+            </p>
+            <p style="color: blue;">
+              <%= post.content %>
+            </p>
+            <hr />
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-md-3" style="background-color:yellow;">
-    
-  <%= render 'user/index.html.erb' %>
+    <div class="col-md-3" style="background-color:yellow;">
+      
+    <%= render 'user/index.html.erb' %>
 
+    </div>
   </div>
+
 </div>
 
 
