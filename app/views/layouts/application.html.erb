@@ -9,24 +9,30 @@
 <body>
 
   <% if user_signed_in? %>
-    <%= render 'shared/navigation.html.erb' %>
+    <%= render 'shared/navigation' %>
   <% else %>
-    <%= render 'shared/navconnexion.html.erb' %> 
+    <%= render 'shared/navconnexion' %> 
   <% end %>
-
-  <div id="main-container" class="container">
   
-    <div class="row">
-      <div class="col-xs-12">
-        <% flash.each do |name, msg| -%>
-        <%= content_tag :div, msg, class: "alert alert-#{name}" %>
-        <% end -%>
-      </div>
-    </div>
-        
-    <%= yield %>
+  <div class="container-fluid" id="background-connexion">
 
+    <div id="main-container" class="container">
+    
+      <div class="row">
+        <div class="col-xs-12">
+          <% flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, class: "alert alert-#{name}" %>
+          <% end -%>
+        </div>
+      </div>
+          
+      <%= yield %>
+
+    </div>
+  
   </div>
+
+   <%= render 'shared/footer' %> 
 
 <script type="text/javascript">
 	$('.alert').delay(4000).fadeOut();
