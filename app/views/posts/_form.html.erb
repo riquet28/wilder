@@ -1,11 +1,12 @@
 <div class="col-md-10">
-  <%= form_for(@newpost) do |f| %>
-    <%= f.text_field :content %>
+  <%= bootstrap_form_for(@newpost) do |f| %>
+    <%= f.text_field :content, hide_label: true, placeholder: "Votre texte" %>
     <%= f.hidden_field :user_id, value: current_user.id %>
 </div>
 <div class="col-md-2">
   <div class="pull-right">
-    <a href="#" class="btn btn-primary"><%= f.submit "Envoyer", {:method => :post } %></a>
+    <%= f.primary "Go Post !!!", {:method => :post } %></a>
     <% end %>
   </div>
 </div>
+
