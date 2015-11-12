@@ -32,15 +32,14 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @newpost = Post.new(post_params)
-
-      if @newpost.save
-        flash[:success] = 'Your Post was successfully created.'
-        redirect_to root_path
-      else
-        flash[:danger] = 'There was a problem creating the Post.'
-        format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if @newpost.save
+      flash[:success] = 'Your Post was successfully created.'
+      redirect_to root_path
+    else
+      flash[:danger] = 'There was a problem creating the Post.'
+      format.html { render :new }
+      format.json { render json: @post.errors, status: :unprocessable_entity }
+    end
   end
 
   # PATCH/PUT /posts/1

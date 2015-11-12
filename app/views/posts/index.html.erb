@@ -103,17 +103,7 @@
             </div>
             <div class="panel-footer clearfix">
               <div class="row">
-                <div class="col-md-10">
-                  <%= form_for(@newpost) do |f| %>
-                    <%= f.text_field :content %>
-                    <%= f.hidden_field :user_id, value: current_user.id %>
-                </div>
-                <div class="col-md-2">
-                  <div class="pull-right">
-                    <a href="#" class="btn btn-primary"><%= f.submit "Envoyer", {:method => :post } %></a>
-                    <% end %>
-                  </div>
-                </div>
+                <%= render 'form' %>
               </div>
             </div>
           </div>
