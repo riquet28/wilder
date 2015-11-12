@@ -1,52 +1,12 @@
-<%= form_for(@post) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+<div class="col-md-10">
+  <%= bootstrap_form_for(@newpost) do |f| %>
+    <%= f.text_field :content, hide_label: true, placeholder: "Votre texte" %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+</div>
+<div class="col-md-2">
+  <div class="pull-right">
+    <%= f.primary "Go Post !!!", {:method => :post } %></a>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_field :content %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
 
-<%= form_for(@post, html: {class: 'form-horizontal'}) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  
-  <div class="field form-group">
-    <%= f.label :content, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-      <%= f.text_area :content, class: 'form-control' %>
-    </div>
-  </div>
-  <div class="actions form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <%= f.submit %>
-    </div>
-  </div>
-<% end %>
