@@ -16,12 +16,12 @@ User.create([{ nom: 'Duck',
               password: 'aaaaaaaa' }])
               
 User.create([{ nom: 'Mouse',
-              email: 'mickeyd@email.com',
+              email: 'mickey@email.com',
               pseudo:'Mickou',
               prenom: 'Mickey',
               password: 'aaaaaaaa' }])
 
-User.create([{ nom: 'Starck',
+User.create([{ nom: 'Stark',
               email: 'ironman@email.com',
               pseudo:'ironman',
               prenom: 'Tony',
@@ -34,7 +34,7 @@ User.create([{ nom: 'Banner',
               password: 'aaaaaaaa' }])
 
 User.create([{ nom: 'Wayne',
-              email: 'batmand@email.com',
+              email: 'batman@email.com',
               pseudo:'Batman',
               prenom: 'Bruce',
               password: 'aaaaaaaa' }])
