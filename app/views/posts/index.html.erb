@@ -16,7 +16,7 @@
                   <p><img src="http://www.1001avatars.net/_avatars/humour/008.jpg" alt="" class="img-responsive"></p>
                 </div>
                 <div class="col-md-6">
-                  <p><%= current_user.email %></p>
+                  <p><%= current_user.pseudo %></p>
                   <p><%= current_user.email %></p>
                 </div>
               </div>
@@ -86,19 +86,28 @@
                   <span class="glyphicon glyphicon-list-alt"></span> Messages</h3>
             </div>
             <div class="panel-body">
-              <div class="row">
-                <div class="col-md-12">
-                <!-- ruby pour afficher tous les messages de tous les utilisateurs, ordre decroissant -->
+              <div class="row" style="overflow: scroll; height: 350px;">
                 <% @posts.reverse.each do |post| %>
-                  <p style="color: red;">
-                    Posté par <b><%= post.user.pseudo %></b> le <%= creation_post(post) %> 
-                  </p>
-                  <p style="color: blue;">
-                    <%= post.content %>
-                  </p>
-                  <hr />
+                  <div class="col-sm-3">
+                    <div class="thumbnail">
+                      <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                    </div><!-- /thumbnail -->
+                  </div><!-- /col-sm-1 -->
+                  <div class="col-sm-9">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <p>
+                          Posté par <b><%= post.user.pseudo %></b> le <%= creation_post(post) %> 
+                        </p>
+                      </div>
+                      <div class="panel-body">
+                        <p>
+                          <%= post.content %>
+                        </p>
+                      </div><!-- /panel-body -->
+                    </div><!-- /panel panel-default -->
+                  </div><!-- /col-sm-5 -->
                 <% end %>
-                </div> 
               </div>
             </div>
             <div class="panel-footer clearfix">
