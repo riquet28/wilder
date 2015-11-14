@@ -6,19 +6,34 @@
 
 <div class="row">
   <div class="col-md-12 form-inscrip-rapid">
-    
-    <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f| %>
-    <%= devise_error_messages! %>
-    <%= f.email_field :email, placeholder: "Email" %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, placeholder: "Mot de passe" %>
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    <%= f.primary "Inscription et Go !", class: "pull-right"  %>
-    <% end %>
-  </div>
-</div>
 
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),  html: { class: 'form-horizontal' })  do |f| %>
+
+    <%= f.input :prenom, label: false, placeholder: 'Votre prénom' %>
+
+    <%= f.input :nom, label: false, placeholder: 'Votre nom' %>
+
+    <%= f.input :email, label: false, placeholder: 'Votre email' %>
+
+    <%= f.input :pseudo, label: false, placeholder: 'Choisissez un pseudo' %>
+
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    
+    <%= f.input :password, label: "Mot de passe", placeholder: "Minimum 8 caractères" %>
+
+    <%= f.input :password_confirmation, label: "Mot de passe confirmation", autocomplete: "off" %>
+ 
+    <%= f.input :birthday, label: "Votre date de naissance", as: :date,
+      start_year: Date.today.year - 50, end_year: Date.today.year - 12,
+      discard_day: false,
+      order: [:day, :month, :year] %>    
+
+    <%= f.button :submit, "Inscription et Go !!!", class: "btn btn-primary pull-right" %>
+
+  <% end %>
+
+</div>
 
 <%= render "devise/shared/links" %>
