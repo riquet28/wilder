@@ -24,6 +24,10 @@ gem 'autoprefixer-rails'
 gem 'bootstrap_form'
 #Simple Form
 gem 'simple_form'
+# Use paperclip to upload files
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'babosa'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
