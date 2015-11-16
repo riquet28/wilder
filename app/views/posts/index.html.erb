@@ -1,6 +1,6 @@
 <div class="container-fluid">
 
-  <div class="row" style="margin-top: 70px;">
+  <div class="row" style="margin-top: 10px;">
 
     <div class="col-md-3">
 
@@ -12,12 +12,16 @@
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <p><img src="http://www.1001avatars.net/_avatars/humour/008.jpg" alt="" class="img-responsive"></p>
                 </div>
-                <div class="col-md-6">
-                  <p><%= current_user.pseudo %></p>
-                  <p><%= current_user.email %></p>
+                <div class="col-md-8">
+                  <p>Votre pseudo :<br>
+                    <b><%= current_user.pseudo %></b>
+                  </p>
+                  <p>Votre email :<br>
+                    <b><%= current_user.email %></b>
+                    </p>
                 </div>
               </div>
               <hr>
@@ -43,7 +47,7 @@
       </div>
 
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" style="margin-bottom: 50px;">
           <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">Vos amis<span class="badge pull-right">33</span></h3>
