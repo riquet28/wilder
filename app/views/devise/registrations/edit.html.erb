@@ -1,44 +1,31 @@
-<h2 style="margin-top: 60px;">Votre Profil</h2>
+<h2>Votre Profil</h2>
 
 <hr>
 
 <h3>Civilité</h3>
+<p>
+  Vous pouvez compléter votre profil ou mettre à jour les champs ci-dessous.
+</p>
 
-<div class="row">
-  <div class="col-md-12" style="margin-bottom: 30px">
-    
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),  html: { class: 'form-horizontal' })  do |f| %>
+    <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-7") do |f| %>
 
-      <div class="row">
-        <div class="col-md-6">
-          <%= f.input :prenom, label: "Votre prénom" %>
-          <%= f.input :nom, label: "Votre nom" %>
-        </div>
-        <div class="col-md-6">
-          <%= f.input :email, label: "Votre email" %>
-          <%= f.input :pseudo, label: "Votre pseudo" %>
-        </div>
-      </div>
+      <%= f.text_field :nom, label: "Votre nom" %>
+      <%= f.text_field :prenom, label: "Votre prénom" %>
+      <%= f.text_field :pseudo, label: "Votre pseudo" %>
+      <%= f.datetime_field :birthday, label: "Votre date de naissance" %>
+        
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
 
-      <div class="row">
-        <div class="col-md-5">
-          <%= f.input :current_password, label: "Saisissez votre mot de passe pour confirmer vos changements", autocomplete: "off" %>
-        </div>
-        <div class="col-md-5">
-         <%= f.input :birthday, label: "Votre date de naissance", as: :date,
-            start_year: Date.today.year - 50, end_year: Date.today.year - 12,
-            discard_day: false,
-            order: [:day, :month, :year] %>  
-        </div>
-        <div class="col-md-2">
-          <%= f.button :submit, "Mettre à jour", class: "btn btn-primary" %>
-        </div> 
-      </div>
+      <%= f.password_field :password, label: "Mot de passe", icon: "user", placeholder: "Si vous souhaitez modifier votre mot de passe" %>
+      <%= f.password_field :password_confirmation, label: "Confirmez votre nouveau mot de passe", autocomplete: "off", placeholder: "Minimum 8 caractères" %>
 
+      <%= f.password_field :current_password, label: "Saisissez votre mot de passe pour confirmer vos changements", autocomplete: "off" %>
+
+      <%= f.primary "Mettre à jour", control_col: "col-sm-7 col-offset-sm-4" %>
     <% end %>
 
-  </div>
-</div>
 
 <hr>
 
@@ -46,6 +33,16 @@
 
 <hr>
 
-<p>Unhappy? <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<div class="row" style="margin-bottom: 60px;">
+  <div class="col-md-8">
+    <p>
+      Vous souhaitez supprimer votre compte ? Attention cette action est irréversible... 
+    </p>    
+  </div>
+  <div class="col-md-4">
+    <%= button_to "Supprimer mon compte", registration_path(resource_name), class: "btn btn-primary", data: { confirm: "Are you sure?" }, method: :delete %>
+  </div>
+  <hr>
+</div>
 
 
