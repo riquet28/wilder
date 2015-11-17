@@ -11,6 +11,10 @@ class UserController < ApplicationController
   def show
   end
 
+  def create
+    @user = User.create(user_params)
+  end
+
   def edit
     @user.build_profile if @user.profile.nil?
   end
