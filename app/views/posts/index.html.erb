@@ -102,9 +102,7 @@
                   <div class="message-inner">
                     <div class="message-head clearfix">
                       <div class="avatar pull-left">
-                        <% if current_user.avatar.exists? %>
-                          <%= image_tag current_user.avatar.url(:thumb) %>
-                        <% end %>
+                        <%= image_tag post.user.avatar.url(:thumb) %>
                       </div>
                       <div class="user-detail">
                         <h5 class="handle"><%= post.user.pseudo %></h5>
