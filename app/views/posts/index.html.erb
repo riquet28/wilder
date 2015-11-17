@@ -13,7 +13,12 @@
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-4">
-                  <p><img src="http://www.1001avatars.net/_avatars/humour/008.jpg" alt="" class="img-responsive"></p>
+                  <p>
+                    <!-- <img src="http://www.1001avatars.net/_avatars/humour/008.jpg" alt="" class="img-responsive"> -->
+                    <% if current_user.avatar.exists? %>
+                      <%= image_tag current_user.avatar.url(:thumb) %>
+                    <% end %>
+                  </p>
                 </div>
                 <div class="col-md-8">
                   <p>Votre pseudo :<br>
@@ -96,7 +101,10 @@
                 <div class="message-item" id="m16">
                   <div class="message-inner">
                     <div class="message-head clearfix">
-                      <div class="avatar pull-left"><a href="./index.php?qa=user&qa_1=Oleg+Kolesnichenko"><img src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png"></a>
+                      <div class="avatar pull-left">
+                        <% if current_user.avatar.exists? %>
+                          <%= image_tag current_user.avatar.url(:thumb) %>
+                        <% end %>
                       </div>
                       <div class="user-detail">
                         <h5 class="handle"><%= post.user.pseudo %></h5>
