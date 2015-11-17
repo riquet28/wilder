@@ -13,15 +13,26 @@
       <%= f.text_field :prenom, label: "Votre prénom" %>
       <%= f.text_field :pseudo, label: "Votre pseudo" %>
       <%= f.datetime_field :birthday, label: "Votre date de naissance" %>
-        
+
+<hr>
+
+<h3>Mot de passe</h3>
+<p>
+  Vous pouvez modifier votre mot de passe.
+</p>
+       
         <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
 
-      <%= f.password_field :password, label: "Mot de passe", icon: "user", placeholder: "Si vous souhaitez modifier votre mot de passe" %>
+      <%= f.password_field :password, label: "Mot de passe", icon: "user", placeholder: "Votre nouveau mot de passe" %>
       <%= f.password_field :password_confirmation, label: "Confirmez votre nouveau mot de passe", autocomplete: "off", placeholder: "Minimum 8 caractères" %>
 
-      <%= f.password_field :current_password, label: "Saisissez votre mot de passe pour confirmer vos changements", autocomplete: "off" %>
+<hr>
+
+<h3>Valider vos changements</h3>
+
+      <%= f.password_field :current_password, label: "Saisissez votre mot de passe actuel pour confirmer vos changements", autocomplete: "off" %>
 
       <%= f.primary "Mettre à jour", control_col: "col-sm-7 col-offset-sm-4" %>
     <% end %>
@@ -29,11 +40,9 @@
 
 <hr>
 
-<h2>Suppression de compte</h2>
+<h2>Suppression de votre compte</h2>
 
-<hr>
-
-<div class="row" style="margin-bottom: 60px;">
+<div class="row" style="margin-bottom: 75px;">
   <div class="col-md-8">
     <p>
       Vous souhaitez supprimer votre compte ? Attention cette action est irréversible... 
