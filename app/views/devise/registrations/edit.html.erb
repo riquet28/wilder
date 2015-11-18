@@ -12,7 +12,6 @@
       <%= f.text_field :nom, label: "Votre nom" %>
       <%= f.text_field :prenom, label: "Votre prénom" %>
       <%= f.text_field :pseudo, label: "Votre pseudo" %>
-      <%= f.datetime_field :birthday, label: "Votre date de naissance" %>
       <%= f.date_select :birthday, label: "Votre date de naissance", start_year: 1960, end_year: 2020, class: 'form group form-control form inline'  %>
 
 <hr>
@@ -33,10 +32,10 @@
 
 <h3>Choix de votre avatar</h3>
 <p>
-  Uploader l'avatar de votre choix.
+  Votre avatar actuel <%= image_tag current_user.avatar.url(:thumb) %>
 </p>
 
-  <%= f.file_field :avatar %>
+  <%= f.file_field :avatar, label: "Uploader un nouvel avatar" %>
 
 <hr>
 
