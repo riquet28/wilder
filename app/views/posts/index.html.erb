@@ -1,87 +1,11 @@
 <div class="container-fluid">
-
   <div class="row" style="margin-top: 10px;">
 
     <div class="col-md-3">
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Votre Profil</h3>
-            </div>
-            <div class="panel-body">
-              <div class="row">
-                <div class="col-md-4">
-                  <p>
-                    <!-- <img src="http://www.1001avatars.net/_avatars/humour/008.jpg" alt="" class="img-responsive"> -->
-                    <% if current_user.avatar.exists? %>
-                      <%= image_tag current_user.avatar.url(:thumb) %>
-                    <% end %>
-                  </p>
-                </div>
-                <div class="col-md-8">
-                  <p>Votre pseudo :<br>
-                    <b><%= current_user.pseudo %></b>
-                  </p>
-                  <p>Votre email :<br>
-                    <b><%= current_user.email %></b>
-                    </p>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-md-12">
-                  <p>Humeur : "Carpe Diem !!!</p>
-                </div>
-              </div>
-            </div>
-            <div class="panel-footer clearfix">
-              <div class="pull-right">
-                <%= link_to "Mettre à jour votre profil", edit_user_registration_path, class: "btn btn-primary" %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel panel-primary">
-        <div class="panel-body">Message(s)
-          <span class="badge pull-right">12</span>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12" style="margin-bottom: 50px;">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Vos amis<span class="badge pull-right">33</span></h3>
-            </div>
-            <div class="panel-body">
-              <div class="row">
-                <div class="col-md-6">
-                  <ul class="list-unstyled">
-                    <li>ami1</li>
-                    <li>ami2</li>
-                    <li>ami3</li>
-                    <li>ami4</li>
-                    <li>ami5</li>
-                  </ul>
-                </div>
-                <div class="col-md-6">
-                  <ul class="pull-right list-unstyled">
-                    <li>connecté</li>
-                    <li>connecté</li>
-                    <li>connecté</li>
-                    <li>Hors-ligne</li>
-                    <li>Hors-ligne</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <%= render 'cartouche_profil' %>
+      <%= render 'cartouche_messages' %>
+      <%= render 'cartouche_amis' %>
 
     </div>
 
@@ -143,39 +67,12 @@
 
     <div class="col-md-2">
 
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">Liste de Membres
-              <span class="badge pull-right"><%= @users.all.count %></span></h3>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-md-12">
-              <ul class="list-unstyled">
-                <li><%= render 'user/index.html.erb' %></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">Derniers Posts
-              <span class="badge pull-right">3</span></h3>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-md-12">
-              <%= @posts.last %>
-            </div>
-          </div>
-        </div>
-      </div>
+      <%= render 'cartouche_membres' %>
+      <%= render 'cartouche_derniers_posts' %>
 
     </div>
-  </div>
 
+  </div>
 </div>
 
 
