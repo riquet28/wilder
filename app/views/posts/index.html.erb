@@ -34,7 +34,7 @@
                           <div class="asker-meta">
                             <span class="qa-message-what"></span>
                             <span class="qa-message-when">
-                              <span class="qa-message-when-data"><%= creation_post(post) %></span>
+                              <span class="qa-message-when-data"><%= time_ago_in_words(post.created_at) %> ( <%= creation_post(post) %> ) </span>
                             </span>
                             <span class="qa-message-who">
                               <span class="qa-message-who-pad">by </span>
