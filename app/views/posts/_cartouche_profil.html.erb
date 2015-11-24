@@ -10,7 +10,7 @@
             <p>
               <!-- <img src="http://www.1001avatars.net/_avatars/humour/008.jpg" alt="" class="img-responsive"> -->
               <% if current_user.avatar.exists? %>
-                <%= image_tag current_user.avatar.url(:thumb) %>
+                <%= image_tag current_user.avatar.url(:medium) %>
               <% end %>
             </p>
           </div>
