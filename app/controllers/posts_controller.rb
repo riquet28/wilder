@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     @posts = Post.all
     @newpost = Post.new
     @users = User.all
+    @titre = "Accueil"
   end
 
   # GET /posts/1
