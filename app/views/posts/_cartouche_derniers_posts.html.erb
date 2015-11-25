@@ -6,7 +6,11 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-12">
-        <%= @posts.last %>
+        <ul>
+          <% @posts.last(3).each do |post| %>
+            <li><%= post.content %></li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
