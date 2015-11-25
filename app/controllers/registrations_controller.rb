@@ -1,5 +1,9 @@
 class RegistrationsController < Devise::RegistrationsController
 
+  def edit
+    @titre = "Votre profil"
+  end
+
   private
 
   def sign_up_params
