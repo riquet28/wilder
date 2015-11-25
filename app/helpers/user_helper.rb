@@ -2,7 +2,7 @@ module UserHelper
 
 	# Fonctionne pas
   def pseudo_mail(user)
-		if user.pseudo != nil
+		if user.pseudo != ""
 			user.pseudo
 		else
 			user.email
@@ -12,11 +12,11 @@ module UserHelper
   # Affichage du logo selon langage
   def logo(langage)
     if langage == "Ruby"
-      image_tag("rails.png")
+      image_tag("rails.png", class: 'img-responsive')
     elsif langage == "Php"
-      image_tag("php.png")
+      image_tag("php.png", class: 'img-responsive')
     else
-      image_tag("javascript.png")
+      image_tag("javascript.png", class: 'img-responsive')
     end
   end
 

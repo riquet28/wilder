@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-md-12">
         <ul>
-          <% @posts.last(3).each do |post| %>
+          <% @lastpost.each do |post| %>
             <li><%= post.content %></li>
           <% end %>
         </ul>

@@ -9,15 +9,12 @@ class PostsController < ApplicationController
     @newpost = Post.new
     @users = User.all
     @titre = "Accueil"
+    @lastpost = Post.last(3)
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-  end
-
-  def dernier_posts
-    @lastpost = Post.last(3)
   end
 
   def messageposts
