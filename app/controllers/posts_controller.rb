@@ -16,6 +16,10 @@ class PostsController < ApplicationController
   def show
   end
 
+  def dernier_posts
+    @lastpost = Post.last(3)
+  end
+
   def messageposts
     @post = Post.find(params[:id])
   end
