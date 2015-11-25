@@ -1,0 +1,17 @@
+<% @users.each do |user| %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= image_tag user.avatar.url(:thumb) %>
+    </div>
+    <div class="col-md-8">
+      <%= pseudo_mail(user) %> 
+    </div>
+  </div>
+<% end %>
+
+
+
+
+
+
+

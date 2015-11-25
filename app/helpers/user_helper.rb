@@ -1,9 +1,9 @@
 module UserHelper
 
-	# Fonctionne pas
+	# Affichage pseudo si existe sinon email
   def pseudo_mail(user)
 		if user.pseudo != ""
-			user.pseudo
+      user.pseudo
 		else
 			user.email
 		end
