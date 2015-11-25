@@ -16,6 +16,21 @@
 
 <hr>
 
+<h3>Vos coordonnées</h3>
+
+  <%= f.text_field :adresse, label: "Mon adresse" %>
+  <%= f.text_field :telephone, label: "Mon téléphone" %>
+
+<hr>
+
+<h3>Vos infos professionnelles</h3>
+
+  <%= f.text_field :langage, label: "Mon langage web" %>
+  <%= f.text_field :competence, label: "Mes compétences" %>
+  <%= f.text_area :description, label: "Ma description" %>
+
+<hr>
+
 <h3>Mot de passe</h3>
 <p>
   Vous pouvez modifier votre mot de passe.
@@ -36,6 +51,14 @@
 </p>
 
   <%= f.file_field :avatar, label: "Uploader un nouvel avatar" %>
+
+<hr>
+
+<h3>Personnaliser votre humeur</h3>
+<p>
+  Votre humeur : 
+  <%= f.text_field :tag, label: "Votre humeur" %>
+</p>
 
 <hr>
 

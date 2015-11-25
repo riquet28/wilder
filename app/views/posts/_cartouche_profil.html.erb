@@ -10,7 +10,7 @@
             <p>
               <!-- <img src="http://www.1001avatars.net/_avatars/humour/008.jpg" alt="" class="img-responsive"> -->
               <% if current_user.avatar.exists? %>
-                <%= image_tag current_user.avatar.url(:medium) %>
+                <%= image_tag current_user.avatar.url(:thumb) %>
               <% end %>
             </p>
           </div>
@@ -20,13 +20,26 @@
             </p>
             <p>Votre email :<br>
               <b><%= current_user.email %></b>
-              </p>
+            </p>
           </div>
         </div>
         <hr>
         <div class="row">
           <div class="col-md-12">
-            <p>Humeur : "Carpe Diem !!!</p>
+            <p><%= current_user.tag %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <%= logo(current_user.langage) %>
+          </div>
+          <div class="col-md-6">
+            <p><b>Langage web :</b><br />
+              <%= current_user.langage %>
+            </p>
+            <p><b>Compétences Web :</b><br />
+              <%= current_user.competence %>
+            </p>
           </div>
         </div>
       </div>

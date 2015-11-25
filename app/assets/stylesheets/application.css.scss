@@ -186,7 +186,10 @@ color: #777;
 font-size: 12px;
 line-height: 22px;
 }
-img {
+.avatar img {
  min-height: 40px;
  max-height: 40px;
+}
+.img-medium {
+    max-width: 100px;
 }
