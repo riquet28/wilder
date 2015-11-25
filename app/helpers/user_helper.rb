@@ -1,11 +1,11 @@
 module UserHelper
 
 	# Fonctionne pas
-  def connecte(current_user)
-		if user_signed_in?
-			"Connecté"
+  def pseudo_mail(user)
+		if user.pseudo != nil
+			user.pseudo
 		else
-			"Hors-ligne"
+			user.email
 		end
 	end
 
