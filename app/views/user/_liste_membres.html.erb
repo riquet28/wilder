@@ -1,13 +1,50 @@
 <% @users.each do |user| %>
-  <ul class="nav nav-pills nav-stacked">
-    <li>
-      <%=link_to edit_user_registration_path do %>
-        <%= image_tag user.avatar.url(:thumb) %>
-        <%= pseudo_mail(user) %> | <%= en_ligne(current_user) %>
-      <% end %>
-    </li>
-  </ul>
+  <li>
+    <%=link_to edit_user_registration_path do %>
+      <%= image_tag user.avatar.url(:thumb) %>
+      <%= pseudo_mail(user) %> | <%= en_ligne(current_user) %>
+      <%= link_to "Open modal", "#myModal", :class => "btn", "data-toggle" => "modal" %>
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
+              <h3 id="myModalLabel"><%= image_tag user.avatar.url(:thumb) %> Carte de visite de <%= user.pseudo %></h3>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <%= logo(user.langage) %>
+                </div>
+                <div class="col-md-8">
+                  <h4>Présentation</h4>
+                  <%= user.description %>
+                  <h4>Compétences Web</h4>
+                  <%= user.competence %>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h4>Me contacter</h4>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6"><%= user.telephone %></div>
+                    <div class="col-md-6"><%= user.email %></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+            <button aria-hidden="true" class="btn pull-left" data-dismiss="modal">Close</button>
+            <button aria-hidden="true" class="btn btn-primary" data-dismiss="modal">Envoyer un message privé</button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </li>
 <% end %>
+
+
+
 
 
 

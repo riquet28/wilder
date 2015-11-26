@@ -22,8 +22,10 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'autoprefixer-rails'
 # Bootstrap Form
 gem 'bootstrap_form'
-#Simple Form
+# Simple Form
 gem 'simple_form'
+# Bootstrap Modal
+gem 'bootstrap-modal-rails'
 # Use paperclip to upload files
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'babosa'
