@@ -2,7 +2,7 @@
   <li>
     <%=link_to edit_user_registration_path do %>
       <%= image_tag user.avatar.url(:thumb) %>
-      <%= pseudo_mail(user) %> | <%= en_ligne(current_user) %>
+      <%= pseudo_mail(user) %> | <%= en_ligne(user) %>
       <%= link_to "Open modal", "#myModal", :class => "btn", "data-toggle" => "modal" %>
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
