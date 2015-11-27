@@ -16,5 +16,9 @@ class User < ActiveRecord::Base
 
   # Mailboxer functionality
   acts_as_messageable
+
+  def mailboxer_email(object)
+    email
+  end
   
 end

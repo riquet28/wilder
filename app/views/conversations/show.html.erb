@@ -14,11 +14,11 @@
         <div class="media">
           <% message = receipt.message %>
           <div class="media-left">
-            <%= gravatar_for message.sender, 45, message.sender.name %>
+            <%= gravatar_for message.sender, 45, message.sender.nom %>
           </div>
 
           <div class="media-body">
-            <h6 class="media-heading"><%= message.sender.name %>
+            <h6 class="media-heading"><%= message.sender.nom %>
               says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></h6>
             <%= message.body %>
           </div>

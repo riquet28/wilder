@@ -35,6 +35,9 @@ gem "mailboxer"
 gem 'gravatar_image_tag'
 gem 'chosen-rails'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
+gem 'will_paginate'
+
+gem 'bootstrap-will_paginate'
 
 
 # Use jquery as the JavaScript library
