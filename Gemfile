@@ -29,6 +29,12 @@ gem 'bootstrap-modal-rails'
 # Use paperclip to upload files
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'babosa'
+# Mailboxer pour les messages privés
+gem "mailboxer"
+# Gravatar
+gem 'gravatar_image_tag'
+gem 'chosen-rails'
+gem "compass-rails", github: "Compass/compass-rails", branch: "master"
 
 
 # Use jquery as the JavaScript library

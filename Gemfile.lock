@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/Compass/compass-rails.git
+  revision: a1c890628d61f62e61474de2c00dde2658251196
+  branch: master
+  specs:
+    compass-rails (3.0.0)
+      compass (~> 1.0.0)
+      sass-rails (< 5.1)
+      sprockets (< 4.0)
+
+GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: b6f23f054996c2a6364800e722c8f12ca4f62178
   specs:
@@ -63,6 +73,17 @@ GEM
     bootstrap_form (2.3.0)
     builder (3.2.2)
     byebug (6.0.2)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+    chosen-rails (1.4.1)
+      coffee-rails (>= 3.2)
+      compass-rails (>= 1.1.2)
+      railties (>= 3.0)
+      sass-rails (>= 3.2)
+    chunky_png (1.3.5)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.7)
@@ -74,6 +95,18 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    compass (1.0.3)
+      chunky_png (~> 1.2)
+      compass-core (~> 1.0.2)
+      compass-import-once (~> 1.0.5)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+      sass (>= 3.3.13, < 3.5)
+    compass-core (1.0.3)
+      multi_json (~> 1.0)
+      sass (>= 3.3.0, < 3.5)
+    compass-import-once (1.0.5)
+      sass (>= 3.2, < 3.5)
     debug_inspector (0.0.2)
     devise (3.5.2)
       bcrypt (~> 3.0)
@@ -84,8 +117,12 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.6.0)
+    ffi (1.9.10)
+    foreigner (1.7.4)
+      activerecord (>= 3.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gravatar_image_tag (1.2.0)
     i18n (0.7.0)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
@@ -99,6 +136,10 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mailboxer (0.13.0)
+      carrierwave (>= 0.5.8)
+      foreigner (>= 0.9.1)
+      rails (>= 3.2.0)
     mime-types (2.6.2)
     mimemagic (0.3.0)
     mini_portile (0.6.2)
@@ -135,6 +176,9 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
+    rb-fsevent (0.9.6)
+    rb-inotify (0.9.5)
+      ffi (>= 0.5.0)
     rdoc (4.2.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
@@ -187,10 +231,14 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.5)
   bootstrap_form
   byebug
+  chosen-rails
   coffee-rails (~> 4.1.0)
+  compass-rails!
   devise
+  gravatar_image_tag
   jbuilder (~> 2.0)
   jquery-rails
+  mailboxer
   paperclip!
   rails (= 4.2.4)
   sass-rails (~> 5.0)
