@@ -1,0 +1,21 @@
+<%= form_tag messages_path, method: :post do %>
+
+  <div class="form-group">
+    <%= label_tag 'recipients', 'Choisissez votre / vos destinataire(s)' %>
+    <%= select_tag 'recipients', recipients_options, multiple: true, class: 'form-control chosen-it' %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag 'message[subject]', 'Le sujet de votre message' %>
+    <%= text_field_tag 'message[subject]', nil, class: 'form-control', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag 'message[body]', 'Votre message' %>
+    <%= text_area_tag 'message[body]', nil, cols: 3, class: 'form-control', required: true %>
+  </div>
+
+  <%= link_to 'Retour', root_path, class: 'btn btn-primary' %>
+  <%= submit_tag 'Envoyer', class: 'btn btn-primary pull-right' %>
+
+<% end %>

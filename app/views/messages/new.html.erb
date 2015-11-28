@@ -1,22 +1,19 @@
-<h1>New messages</h1>
-
-<%= form_tag messages_path, method: :post do %>
-
-  <div class="form-group">
-    <%= label_tag 'recipients', 'Choose recipients' %>
-    <%= select_tag 'recipients', recipients_options, multiple: true, class: 'form-control chosen-it' %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 jumbotron">
+      <div class="row">
+        <div class="col-md-7">
+          <h1>Envoyer votre<br />message privé</h1>
+          <p>
+            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+          </p>
+        </div>
+        <div class="col-md-5" style="margin-top: 25px;">
+          <%= render 'form'%>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-group">
-    <%= label_tag 'message[subject]', 'Subject' %>
-    <%= text_field_tag 'message[subject]', nil, class: 'form-control', required: true %>
-  </div>
-
-  <div class="form-group">
-    <%= label_tag 'message[body]', 'Message' %>
-    <%= text_area_tag 'message[body]', nil, cols: 3, class: 'form-control', required: true %>
-  </div>
+</div>
 
 
-  <%= submit_tag 'Send', class: 'btn btn-primary' %>
-<% end %>
