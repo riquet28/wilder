@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'offres/index'
+
+  get 'offres/show'
+
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :posts
   resources :conversations, only: [:index, :show, :destroy] do
