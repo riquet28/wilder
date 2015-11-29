@@ -120,6 +120,8 @@ GEM
     erubis (2.7.0)
     execjs (2.6.0)
     ffi (1.9.10)
+    font-awesome-sass (4.2.2)
+      sass (~> 3.2)
     foreigner (1.7.4)
       activerecord (>= 3.0.0)
     globalid (0.3.6)
@@ -239,6 +241,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   compass-rails!
   devise
+  font-awesome-sass (~> 4.2.0)
   gravatar_image_tag
   jbuilder (~> 2.0)
   jquery-rails
