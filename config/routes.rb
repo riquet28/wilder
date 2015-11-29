@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'promotions/index'
+
+  get 'promotions/show'
+
   get 'offres/index'
 
   get 'offres/show'
