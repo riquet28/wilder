@@ -36,8 +36,9 @@ gem 'gravatar_image_tag'
 gem 'chosen-rails'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
 gem 'will_paginate'
-
 gem 'bootstrap-will_paginate'
+# Font Awesome
+gem 'font-awesome-sass', '~> 4.2.0'
 
 
 # Use jquery as the JavaScript library
