@@ -1,10 +1,12 @@
 <% @users.each do |user| %>
   <li>
-    <%=link_to edit_user_registration_path do %>
-      <%= image_tag user.avatar.url(:thumb) %>
-      <%= pseudo_mail(user) %> | <%= en_ligne(user) %>
-      <%= link_to "Open modal", "#myModal", :class => "btn", "data-toggle" => "modal" %>
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <!-- Lien menant à la modale -->
+      <a href="#" class="lien-carte-visite" data-toggle="modal" data-target="#myModal<%=user.id%>">
+        <%= image_tag user.avatar.url(:thumb) %><%= pseudo_mail(user) %> | Voir <i class="fa fa-eye"></i>
+      </a>
+
+      <!-- Modale -->
+      <div class="modal fade" id="myModal<%= user.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -35,11 +37,10 @@
             </div>
             <div class="modal-footer">
             <button aria-hidden="true" class="btn pull-left" data-dismiss="modal">Close</button>
-            <button aria-hidden="true" class="btn btn-primary" data-dismiss="modal">Envoyer un message privé</button>
+            <%= link_to "Envoyer un message à #{user.pseudo}", new_message_path(@user), class: "btn btn-primary" %>
           </div>
         </div>
       </div>
-    <% end %>
   </li>
 <% end %>
 
