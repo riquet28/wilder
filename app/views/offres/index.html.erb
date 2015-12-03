@@ -1,5 +1,54 @@
-<h1>Offres#index</h1>
-<p>Find me in app/views/offres/index.html.erb</p>
+<h1>Liste des offres d'emplois et de stages</h1>
+<p>Remplissez un maximum de champs afin de mieux cibler les annonces</p>
 
-<%= link_to "Voir l'offre", offres_show_path, class: "btn btn-primary" %>
-<%= link_to "Retour accueil", root_path, class: "btn btn-primary" %>
+<div class="container-fluid">
+<div class="row">
+  <div class="panel panel-primary filterable">
+    <div class="panel-heading">
+      <h3 class="panel-title">Les Offres
+        <span class="badge"><%= @total_offres %></span>
+      </h3>
+      <div class="pull-right">
+          <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filtrer les offres</button>
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr class="filters">
+          <th><input type="text" class="form-control" placeholder="N°" disabled></th>
+          <th><input type="text" class="form-control" placeholder="Posté par" disabled></th>
+          <th><input type="text" class="form-control" placeholder="Langage" disabled></th>
+          <th><input type="text" class="form-control" placeholder="Localisation" disabled></th>
+          <th><input type="text" class="form-control" placeholder="Type de Contrat" disabled></th>
+          <th><input type="text" class="form-control" placeholder="Salaire annuel" disabled></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @offres.each do |offre| %>
+          <tr>
+            <td><%= offre.id %></td>
+            <td><%= offre.user_id %></td>
+            <td><%= offre.language %></td>
+            <td><%= offre.localisation %></td>
+            <td><%= offre.contrat %></td>
+            <td><%= offre.salaire %></td>
+            <td><%= link_to "Voir l'offre", offre_path(offre.id), class: "btn btn-primary" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to "Poster une offre", new_offre_path(@offre), class: "btn btn-primary pull-right" %>
+    <%= link_to "Retour accueil", root_path, class: "btn btn-primary pull-right" %>
+  </div>
+</div>
+
+
+
+
+

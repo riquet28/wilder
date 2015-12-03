@@ -1,5 +1,14 @@
 <h1>Offres#show</h1>
 <p>Find me in app/views/offres/show.html.erb</p>
 
-<%= link_to "Revenir à la liste", offres_index_path, class: "btn btn-primary" %>
-<%= link_to "Supprimer l'offre", "#", class: "btn btn-primary" %>
+<ul>
+  <li><%= @offre.url %></li>
+  <li><%= @offre.language %></li>
+  <li><%= @offre.salaire %></li>
+  <li><%= @offre.contrat %></li>
+  <li><%= @offre.localisation %></li>
+</ul>
+
+<%= link_to "Revenir à la liste", offres_path, class: "btn btn-primary" %>
+<%= link_to "Editer l'offre", edit_offre_path, class: "btn btn-primary" %>
+<%= link_to "Supprimer l'offre", offre_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %>

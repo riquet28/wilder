@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151127002854) do
+ActiveRecord::Schema.define(version: 20151203143457) do
 
   create_table "friendships", force: :cascade do |t|
     t.integer  "user_id"
@@ -73,12 +73,34 @@ ActiveRecord::Schema.define(version: 20151127002854) do
   add_index "mailboxer_receipts", ["notification_id"], name: "index_mailboxer_receipts_on_notification_id"
   add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
 
+  create_table "offres", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "url"
+    t.string   "contrat"
+    t.string   "localisation"
+    t.integer  "salaire"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "language"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
