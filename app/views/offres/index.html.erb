@@ -1,5 +1,18 @@
 <h1>Offres#index</h1>
 <p>Find me in app/views/offres/index.html.erb</p>
 
+<% @offres.each do |offre| %>
+<div class="row">
+  <div class="col-md-8">
+    <a href="<% offre.url %>"><%= offre.url %></a>
+  </div>
+  <div class="col-md-4">
+    <%= offre.language %>
+  </div>
+</div>
+<% end %>
+
+<%= link_to "Poster une offre", new_offre_path, class: "btn btn-primary" %>
+
 <%= link_to "Voir l'offre", offres_show_path, class: "btn btn-primary" %>
 <%= link_to "Retour accueil", root_path, class: "btn btn-primary" %>

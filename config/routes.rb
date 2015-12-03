@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'offres/index'
 
   get 'offres/show'
+  resources :offres
 
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :posts

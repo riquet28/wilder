@@ -1,0 +1,10 @@
+<%= bootstrap_form_for(@offre) do |f| %>
+<div class="col-md-10">
+    <%= f.text_field :url, hide_label: true, placeholder: "Votre lien" %>
+    <%= f.text_field :language, hide_label: true, placeholder: "Votre langage" %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+</div>
+<div class="col-md-2">
+    <%= f.primary "Go Post !!!" %></a>
+</div>
+  <% end %>

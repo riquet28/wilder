@@ -1,5 +1,6 @@
 class UserController < ApplicationController
 	has_many :posts
+  has_many :offres
   #before_action :authenticate_owner!
   before_filter :set_user, only: [:show, :edit, :update]
 
