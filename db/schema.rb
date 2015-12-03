@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202213519) do
+ActiveRecord::Schema.define(version: 20151203143457) do
 
   create_table "friendships", force: :cascade do |t|
     t.integer  "user_id"
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 20151202213519) do
   create_table "offres", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "url"
-    t.string   "type"
+    t.string   "contrat"
     t.string   "localisation"
     t.integer  "salaire"
     t.datetime "created_at",   null: false

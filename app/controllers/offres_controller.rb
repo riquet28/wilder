@@ -8,9 +8,12 @@ class OffresController < ApplicationController
     @titre = "Emplois/Stages"
     @lastoffre = Offre.last(3)
     @users = User.all
+    @total_offres = Offre.count
   end
 
   def show
+    @titre = "Offre"
+    @offres = Offre.all
   end
 
   def new
@@ -35,7 +38,7 @@ class OffresController < ApplicationController
     respond_to do |format|
       if @offre.update(offre_params)
         flash[:success] = 'Votre offre a bien été mise à jour.'
-        format.html { redirect_to @offre, notice: 'Post was successfully updated.' }
+        format.html { redirect_to @offre }
       else
         flash[:danger] = 'There was a problem updating the Post.'
         format.html { render :edit }
@@ -47,8 +50,7 @@ class OffresController < ApplicationController
     @offre.destroy
     respond_to do |format|
       flash[:success] = 'Supprimée avec succès.'
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to offres_url }
     end
   end
 
@@ -61,7 +63,7 @@ class OffresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def offre_params
-      params.require(:offre).permit(:user_id, :url, :language)
+      params.require(:offre).permit(:user_id, :url, :language, :contrat, :salaire, :localisation)
     end
 
 end

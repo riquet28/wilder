@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
+  
   get 'promotions/index'
-
   get 'promotions/show'
-
-  get 'offres/index'
-
-  get 'offres/show'
+  
   resources :offres
 
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :posts
+
   resources :conversations, only: [:index, :show, :destroy] do
     member do
       post :reply
