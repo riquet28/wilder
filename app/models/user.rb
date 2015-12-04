@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	
-  has_many :posts
+  has_many :posts, :dependent => :destroy, :foreign_key => "user_id"
   belongs_to :profile
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
     medium: "200x200>",
     thumb: "30x30>" 
   }, 
-    default_url: "/images/:style/missing.png"
+    default_url: "/images/:thumb/missing.jpg"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   # Mailboxer functionality
