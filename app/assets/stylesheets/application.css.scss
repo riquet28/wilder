@@ -95,12 +95,12 @@ body {
 
 /* Fil des posts */
 
-.message-item {
+/*.message-item {
 margin-bottom: 25px;
 margin-left: 40px;
 position: relative;
-}
-.message-item .message-inner {
+}*/
+/*.message-item .message-inner {
 background: #fff;
 border: 1px solid #ddd;
 border-radius: 3px;
@@ -214,7 +214,7 @@ line-height: 22px;
   overflow-y: auto;
   margin-bottom: 1em;
   margin-top: 1em;
-}
+}*/
 
 /***** Les offres *****/
 
@@ -240,4 +240,42 @@ line-height: 22px;
 }
 .filterable .filters input[disabled]:-ms-input-placeholder {
     color: #333;
+}
+
+
+/****** Fil des Posts ******/
+/***************************/
+
+.content-post {
+    background-color: #fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 6px;
+}
+    .content-details {
+        padding-left: 0;
+    }
+    .content-details p {
+        margin-bottom: 0;
+    }
+    .timestamp {
+        color: #9e9ea6;
+        font-size: 0.9em;
+    }
+    .humeur {
+        color: #9e9ea6;
+        font-size: 0.9em;
+        font-style: italic;
+    }
+    .content-message {
+        padding-left: 0;
+        word-wrap: break-word;
+    }
+    .content-message p {
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+.content-post:hover {
+    background-color: #f1f1f1;
 }
