@@ -18,43 +18,7 @@
                 <h3 class="panel-title">
                   <i class="fa fa-comments"></i> Vos Messages</h3>
             </div>
-            <!-- <div class="panel-body">
-              <div class="row" style="overflow: scroll; height: 380px;">
-                <div class="col-md-12">
-                <% @posts.reverse.each do |post| %>
-                <div class="message-item" id="m16">
-                  <div class="message-inner">
-                    <div class="message-head clearfix">
-                      <div class="avatar pull-left">
-                        <%= image_tag post.user.avatar.url(:thumb) %>
-                      </div>
-                      <div class="user-detail">
-                        <h5 class="handle"><%= post.user.pseudo %></h5>
-                        <div class="post-meta">
-                          <div class="asker-meta">
-                            <span class="qa-message-what"></span>
-                            <span class="qa-message-when">
-                              <span class="qa-message-when-data"><%= time_ago_in_words(post.created_at) %> ( <%= creation_post(post) %> ) </span>
-                            </span>
-                            <span class="qa-message-who">
-                              <span class="qa-message-who-pad">by </span>
-                              <span class="qa-message-who-data"><a href="./index.php?qa=user&qa_1=Oleg+Kolesnichenko"><%= post.user.pseudo %></a></span>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="qa-message-content">
-                      
-                        <%= post.content %>
-                      
-                    </div>
-                  </div>
-                </div>
-                <% end %>
-                </div>
-              </div>
-            </div> -->
+            
             <div class="panel-body" style="overflow: scroll; height: 380px;">
               <% @posts.reverse.each do |post| %>
               <div class="row content-post">
