@@ -27,7 +27,7 @@
 	margin-top: 0;
 }
 #background-connexion {
-    background-image: url("background_connexion.jpg");
+    background-image: url("background_connexion2.jpg");
     background-size: cover;
     background-attachment: fixed;
     min-height: 100%;
@@ -62,6 +62,7 @@ body {
 }
 
 /**** MESSAGE FLASH DEVISE ****/
+/******************************/
 /*flash*/
 .alert-error {
     background-color: #f2dede;
@@ -93,7 +94,8 @@ body {
 
 
 
-/***** Les offres *****/
+/****** LES OFFRES ******/
+/************************/
 
 .filterable {
     margin-top: 15px;
@@ -120,7 +122,7 @@ body {
 }
 
 
-/****** Fil des Posts ******/
+/****** FIL DES POSTS ******/
 /***************************/
 
 .content-post {

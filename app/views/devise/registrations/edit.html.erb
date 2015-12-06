@@ -25,7 +25,8 @@
 
 <h3>Vos infos professionnelles</h3>
 
-  <%= f.text_field :langage, label: "Mon langage web" %>
+  <%= f.select :promotion, [["1ère Promo: Nov 2014-Avril 2015"], ["2ème Promo: Août 2015-Janv 2016"]], { label: "Ma promo Wild Code School" } %>
+  <%= f.select :langage, [["Ruby"], ["Php"], ["Javascript"]], { label: "Mon langage Web" } %>
   <%= f.text_field :competence, label: "Mes compétences" %>
   <%= f.text_area :description, label: "Ma description" %>
 

@@ -1,7 +1,7 @@
 <%= bootstrap_form_for(@offre) do |f| %>
   <div class="col-md-12">
     <%= f.text_field :url, hide_label: true, placeholder: "Votre lien" %>
-    <%= f.text_field :language, hide_label: true, placeholder: "Votre lien" %>
+    <%= f.select :language, [["Ruby"], ["Php"], ["Javascript"]], { label: "Langage de l'offre" } %>
     <%= f.text_field :contrat, hide_label: true, placeholder: "Type de contrat (stage, cdi, cdd etc)" %>
     <%= f.text_field :localisation, hide_label: true, placeholder: "Lieu de l'offre" %>
     <%= f.text_field :salaire, hide_label: true, placeholder: "Salaire annuel brut" %>
