@@ -26,17 +26,17 @@
 .titre-nav {
 	margin-top: 0;
 }
-#background-connexion {
+.container-fluid#background-connexion {
     background-image: url("background_connexion.jpg");
     background-size: cover;
-    background-attachment: fixed;
     min-height: 100%;
+    padding: 0;
 }
 .panneau-accueil {
 	background-color: rgba(0, 0, 0, 0.8);
 	border-radius: 6px;
 	box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.7);
-	margin-top: 50px;
+	margin-top: 100px;
 	color: white;
 }
 
@@ -48,6 +48,7 @@
 	margin-top: 20px;
 	border-left: solid white 1px;
 }
+
 html {
     height: 100%;
 }
