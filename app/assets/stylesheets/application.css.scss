@@ -19,19 +19,60 @@
 @import "font-awesome";
 
 
+/********** A faire *****************/
+
+/*Importer un fichier reset */
 /*importer un fichier avce mixin*/
 /*importer fichier qui s'appuie sur mixin*/
+/*Faire une table des matières*/
 
+
+
+/************************************************
+************** Table des matières ***************
+************************************************/
+
+
+
+
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    padding-top: 50px;
+    background-color: #f1f1f1;
+}
+
+/* Background du body différent à la connexion*/
+body#connexion {
+    height: 100%;
+    background-image: url("background_connexion.jpg");
+    background-size: cover;
+    background-position: center;
+    padding-top: 50px;
+}
+
+
+/***************** Navigation ******************/
+/***********************************************/
+
+.navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+}
 
 .titre-nav {
 	margin-top: 0;
 }
-#background-connexion {
-    background-image: url("background_connexion.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    min-height: 100%;
-}
+
+
+
+/************* Page de connexion ***************/
+/***********************************************/
+
 .panneau-accueil {
 	background-color: rgba(0, 0, 0, 0.8);
 	border-radius: 6px;
@@ -40,26 +81,18 @@
 	color: white;
 }
 
-.panel {
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5)
+.form-inscrip-rapid {
+    margin-top: 20px;
+    border-left: solid white 1px;
 }
 
-.form-inscrip-rapid {
-	margin-top: 20px;
-	border-left: solid white 1px;
+
+
+.panel {
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
-html {
-    height: 100%;
-}
-body {
-    margin-top: 50px;
-	height: 100%;
-    background-color: #f1f1f1;
-}
-.navbar {
-	border-radius: 0;
-    margin-bottom: 0;
-}
+
+
 
 /**** MESSAGE FLASH DEVISE ****/
 /*flash*/

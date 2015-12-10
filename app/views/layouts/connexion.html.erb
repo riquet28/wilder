@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= titre %></title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <% if user_signed_in? %>
+    <%= render 'shared/navigation' %>
+  <% else %>
+    <%= render 'shared/navconnexion' %> 
+  <% end %>
+  
+  <div class="container-fluid">
+    
+      <div class="row">
+        <div class="col-xs-12">
+          <% flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, class: "alert alert-#{name}" %>
+          <% end -%>
+        </div>
+      </div>
+    
+          
+    <%= yield %>
+
+  </div>
+
+  <%= render 'shared/footer' %> 
+
+<script type="text/javascript">
+  $('.alert').delay(4000).fadeOut();
+</script>
