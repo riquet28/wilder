@@ -44,7 +44,7 @@ body {
     height: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: #f1f1f1;
+    background-color: #fff;
 }
 
 /* Background du body différent à la connexion*/
@@ -136,6 +136,17 @@ body#connexion {
 }
 
 
+
+/*************** Section-Droite ****************/
+/***********************************************/
+
+.section-droite {
+    .form-post {
+        padding: 10px;
+        background-color: #f1f1f1;
+        border-radius: 6px;
+    }
+}
 
 
 /***** Les offres *****/
