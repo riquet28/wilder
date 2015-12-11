@@ -7,36 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 
-<!-- Pas très propre!!! A changer!!! -->
-<!-- ############################### -->
+<!-- Pas très propre!!! Voir pour changer!!! -->
+<!-- ####################################### -->
 
 <% if user_signed_in? %>
+
   <body>
-<% else %>
-  <body id="connexion">
-<% end %>
+    <%= render 'shared/navigation' %>
+  <div class="container-fluid" id="content">
 
-<!-- ############################### -->
+    <section class="section-gauche">
+      <div class="col-md-2" style="background-color: #101010;">
+        <%= render 'posts/cartouche_profil' %>
+        <%= render 'posts/cartouche_messages' %>
+        <%= render 'posts/cartouche_amis' %>
+      </div>
+    </section>
 
-<% if user_signed_in? %>
-  <%= render 'shared/navigation' %>
-<% else %>
-  <%= render 'shared/navconnexion' %> 
-<% end %>
-
-<div class="container-fluid" id="content">
-
-  <section class="section-gauche">
-    <div class="col-md-2" style="background-color: #101010;">
-      <%= render 'posts/cartouche_profil' %>
-      <%= render 'posts/cartouche_messages' %>
-      <%= render 'posts/cartouche_amis' %>
-    </div>
-  </section>
-
-  <section class="section-droite">
-    <div class="col-md-10">
-      <div class="row">
+    <section class="section-droite">
+      <div class="col-md-10">
+        <div class="row">
           <div class="col-xs-12">
             <% flash.each do |name, msg| -%>
             <%= content_tag :div, msg, class: "alert alert-#{name}" %>
@@ -44,16 +34,29 @@
           </div>
         </div>
 
-      <%= yield %>
+        <%= yield %>
 
-    </div>
-  </div>
+      </div>
+    </section>
 
-</div>
+  </div><!-- Fin .container-fluid -->
   
+<% else %>
+
+  <body id="connexion">
+    <%= render 'shared/navconnexion' %> 
+
+
+
+<% end %>
+
   <%= render 'shared/footer' %>
 
-  
+
+
+
+<!-- ############################### -->
+
 
 <script type="text/javascript">
 	$('.alert').delay(4000).fadeOut();
