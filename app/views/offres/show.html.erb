@@ -10,5 +10,9 @@
 </ul>
 
 <%= link_to "Revenir à la liste", offres_path, class: "btn btn-primary" %>
+
+<!-- Donne la possibilité d'éditer et de supprimer l'annonce si l'on est le propriétaire -->
+<% if current_user.id == @offre.user_id %>
 <%= link_to "Editer l'offre", edit_offre_path, class: "btn btn-primary" %>
 <%= link_to "Supprimer l'offre", offre_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %>
+<% end %>
