@@ -1,89 +1,94 @@
-<h2>Votre Profil</h2>
+<div class="row">
+  <div class="col-md-12 scrollable">
 
-<hr>
+    <h1 class="text-center">Edition de mon Profil</h1>
 
-<h3>Civilité</h3>
-<p>
-  Vous pouvez compléter votre profil ou mettre à jour les champs ci-dessous.
-</p>
+    <hr>
 
-    <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-7") do |f| %>
-
-      <%= f.text_field :nom, label: "Votre nom" %>
-      <%= f.text_field :prenom, label: "Votre prénom" %>
-      <%= f.text_field :pseudo, label: "Votre pseudo" %>
-      <%= f.date_select :birthday, label: "Votre date de naissance", start_year: 1960, end_year: 2020, class: 'form group form-control form inline'  %>
-
-<hr>
-
-<h3>Vos coordonnées</h3>
-
-  <%= f.text_field :adresse, label: "Mon adresse" %>
-  <%= f.text_field :telephone, label: "Mon téléphone" %>
-
-<hr>
-
-<h3>Vos infos professionnelles</h3>
-
-  <%= f.text_field :langage, label: "Mon langage web" %>
-  <%= f.text_field :competence, label: "Mes compétences" %>
-  <%= f.text_area :description, label: "Ma description" %>
-
-<hr>
-
-<h3>Mot de passe</h3>
-<p>
-  Vous pouvez modifier votre mot de passe.
-</p>
-       
-        <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-
-      <%= f.password_field :password, label: "Mot de passe", icon: "user", placeholder: "Votre nouveau mot de passe" %>
-      <%= f.password_field :password_confirmation, label: "Confirmez votre nouveau mot de passe", autocomplete: "off", placeholder: "Minimum 8 caractères" %>
-
-<hr>
-
-<h3>Choix de votre avatar</h3>
-<p>
-  Votre avatar actuel <%= image_tag current_user.avatar.url(:thumb) %>
-</p>
-
-  <%= f.file_field :avatar, label: "Uploader un nouvel avatar" %>
-
-<hr>
-
-<h3>Personnaliser votre humeur</h3>
-<p>
-  Votre humeur : 
-  <%= f.text_field :tag, label: "Votre humeur" %>
-</p>
-
-<hr>
-
-<h3>Valider vos changements</h3>
-
-      <%= f.password_field :current_password, label: "Saisissez votre mot de passe actuel pour confirmer vos changements", autocomplete: "off" %>
-
-      <%= f.primary "Mettre à jour", control_col: "col-sm-7 col-offset-sm-4" %>
-    <% end %>
-
-
-<hr>
-
-<h2>Suppression de votre compte</h2>
-
-<div class="row" style="margin-bottom: 75px;">
-  <div class="col-md-8">
+    <h2>Moi</h2>
     <p>
-      Vous souhaitez supprimer votre compte ? Attention cette action est irréversible... 
-    </p>    
+      Vous pouvez compléter votre profil ou mettre à jour les champs ci-dessous.
+    </p>
+
+        <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-7") do |f| %>
+
+          <%= f.text_field :nom, label: "Votre nom" %>
+          <%= f.text_field :prenom, label: "Votre prénom" %>
+          <%= f.text_field :pseudo, label: "Votre pseudo" %>
+          <%= f.date_select :birthday, label: "Votre date de naissance", start_year: 1960, end_year: 2020, class: 'form group form-control form inline'  %>
+
+    <hr>
+
+    <h2>Mes coordonnées</h2>
+
+      <%= f.text_field :adresse, label: "Mon adresse" %>
+      <%= f.text_field :telephone, label: "Mon téléphone" %>
+
+    <hr>
+
+    <h2>Mes infos professionnelles</h2>
+
+      <%= f.text_field :langage, label: "Mon langage web" %>
+      <%= f.text_field :competence, label: "Mes compétences" %>
+      <%= f.text_area :description, label: "Ma description" %>
+
+    <hr>
+
+    <h2>Mon mot de passe</h2>
+    <p>
+      Vous pouvez modifier votre mot de passe.
+    </p>
+           
+            <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+
+          <%= f.password_field :password, label: "Mot de passe", icon: "user", placeholder: "Votre nouveau mot de passe" %>
+          <%= f.password_field :password_confirmation, label: "Confirmez votre nouveau mot de passe", autocomplete: "off", placeholder: "Minimum 8 caractères" %>
+
+    <hr>
+
+    <h2>Choisir mon avatar</h2>
+    <p>
+      Votre avatar actuel <%= image_tag current_user.avatar.url(:thumb) %>
+    </p>
+
+      <%= f.file_field :avatar, label: "Uploader un nouvel avatar" %>
+
+    <hr>
+
+    <h2>Personnaliser mon humeur</h2>
+    <p> 
+      <%= f.text_field :tag, label: "Votre humeur" %>
+    </p>
+
+    <hr>
+
+    <h2>Valider mes changements</h2>
+
+          <%= f.password_field :current_password, label: "Saisissez votre mot de passe actuel pour confirmer vos changements", autocomplete: "off" %>
+
+          <%= f.primary "Mettre à jour", control_col: "col-sm-7 col-offset-sm-4", class: "pull-right" %>
+        <% end %>
+
+
+    <hr>
+
+    <h2 class="text-center">Suppression de mon compte</h2>
+
+    <div class="row" style="margin-bottom: 50px;">
+      <div class="col-md-8">
+        <p class="text-center">
+          Vous souhaitez supprimer votre compte ? Attention cette action est irréversible... 
+        </p>    
+      </div>
+      <div class="col-md-4">
+        <%= button_to "Supprimer mon compte", registration_path(resource_name), class: "btn btn-primary", data: { confirm: "Are you sure?" }, method: :delete %>
+      </div>
+      <hr>
+    </div>
+
   </div>
-  <div class="col-md-4">
-    <%= button_to "Supprimer mon compte", registration_path(resource_name), class: "btn btn-primary", data: { confirm: "Are you sure?" }, method: :delete %>
-  </div>
-  <hr>
 </div>
 
 

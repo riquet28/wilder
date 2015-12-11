@@ -59,6 +59,10 @@ body#connexion {
     padding: 0;
 }
 
+h2 {
+    padding-bottom: 20px;
+}
+
 
 /***************** Navigation ******************/
 /***********************************************/
@@ -141,10 +145,18 @@ body#connexion {
 /***********************************************/
 
 .section-droite {
+    hr {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
     .form-post {
         padding: 10px;
         background-color: #f1f1f1;
         border-radius: 6px;
+    }
+    .scrollable {
+        overflow: scroll;
+        height: 530px;
     }
 }
 
