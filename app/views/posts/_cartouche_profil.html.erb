@@ -1,53 +1,51 @@
 <div class="row">
   <div class="col-md-12">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-          <h3 class="panel-title"><i class="fa fa-user"></i>Votre Profil</h3>
-      </div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-md-6">
-            <p>
-              <!-- <img src="http://www.1001avatars.net/_avatars/humour/008.jpg" alt="" class="img-responsive"> -->
-              <% if current_user.avatar.exists? %>
-                <%= image_tag current_user.avatar.url(:medium) %>
-              <% end %>
-            </p>
-          </div>
-          <div class="col-md-6">
-            <p>Votre pseudo :<br>
-              <b><%= current_user.pseudo %></b>
-            </p>
-            <p>Votre email :<br>
-              <b><%= current_user.email %></b>
-            </p>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-12">
-            <p><%= current_user.tag %></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <%= logo(current_user.langage) %>
-          </div>
-          <div class="col-md-6">
-            <p><b>Langage web :</b><br />
-              <%= current_user.langage %>
-            </p>
-            <p><b>Compétences Web :</b><br />
-              <%= current_user.competence %>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="panel-footer clearfix">
-        <div class="pull-right">
-          <%= link_to "Mettre à jour votre profil", edit_user_registration_path, class: "btn btn-primary" %>
-        </div>
-      </div>
-    </div>
+    <h3><i class="fa fa-user"></i>Votre Profil</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <p>
+      <!-- <img src="http://www.1001avatars.net/_avatars/humour/008.jpg" alt="" class="img-responsive"> -->
+      <% if current_user.avatar.exists? %>
+        <%= image_tag current_user.avatar.url(:medium) %>
+      <% end %>
+    </p>
+  </div>
+  <div class="col-md-8">
+    <p>Votre pseudo :<br>
+      <b><%= current_user.pseudo %></b>
+    </p>
+    <p>Votre email :<br>
+      <b><%= current_user.email %></b>
+    </p>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-md-12">
+    <p><%= current_user.tag %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <%= logo(current_user.langage) %>
+  </div>
+  <div class="col-md-6">
+    <p><b>Langage web :</b><br />
+      <%= current_user.langage %>
+    </p>
+    <p><b>Compétences Web :</b><br />
+      <%= current_user.competence %>
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to "Mettre à jour votre profil", edit_user_registration_path, class: "btn btn-primary center-block" %>
   </div>
 </div>
