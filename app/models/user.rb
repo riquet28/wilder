@@ -9,9 +9,9 @@ class User < ActiveRecord::Base
 
   has_attached_file :avatar, styles: {
     medium: "200x200>",
-    thumb: "30x30>" 
+    thumb: "40x40>" 
   }, 
-    default_url: "/images/:thumb/missing.jpg"
+    default_url: "/images/:style/missing.jpg" 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   # Mailboxer functionality
