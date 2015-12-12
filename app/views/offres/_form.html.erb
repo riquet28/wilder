@@ -1,14 +1,13 @@
 <%= bootstrap_form_for(@offre) do |f| %>
   <div class="col-md-12">
     <%= f.text_field :url, hide_label: true, placeholder: "Votre lien" %>
-    <%= f.text_field :language, hide_label: true, placeholder: "Votre lien" %>
-    <%= f.text_field :contrat, hide_label: true, placeholder: "Type de contrat (stage, cdi, cdd etc)" %>
+    <%= f.select :language, [["Ruby"], ["Php"], ["Javascript"]], { label: "Choisissez le langage:" }, { class: "selectpicker" } %>
+    <%= f.select :contrat, [["Cdi"], ["Cdd"], ["Stage"], ["Autres"]], { label: "Choisissez le type de contrat:" }, { class: "selectpicker" } %>
     <%= f.text_field :localisation, hide_label: true, placeholder: "Lieu de l'offre" %>
     <%= f.text_field :salaire, hide_label: true, placeholder: "Salaire annuel brut" %>
     <%= f.hidden_field :user_id, value: current_user.id %>
-  </div>
-  <div class="col-md-offset 10 col-md-2">
-      <%= f.primary "Poster l'offre" %></a>
+    <%= f.primary "Poster l'offre" %></a>
+    <%= link_to "Annuler", offres_path, class: "btn btn-primary pull-right" %>
   </div>
 <% end %>
 

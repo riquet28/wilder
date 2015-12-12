@@ -1,64 +1,50 @@
 <div class="container-fluid">
   <div class="row" style="margin-top: 10px;">
 
-    <div class="col-md-3">
+    <div class="col-md-9">
 
-      <%= render 'cartouche_profil' %>
-      <%= render 'cartouche_messages' %>
-      <%= render 'cartouche_amis' %>
-
-    </div>
-
-    <div class="col-md-7">
-
+           
       <div class="row">
-        <div class="col-md-12">
-          <div class="panel panel-primary" style="margin-bottom: 70px;">
-            <div class="panel-heading">
-                <h3 class="panel-title">
-                  <i class="fa fa-comments"></i> Vos Messages</h3>
+        <div class="col-md-12 scrollable" style="height: 430px;">
+          <% @posts.reverse.each do |post| %>
+          <div class="row content-post">
+            <div class="col-md-1 avatar pull-left"><%= image_tag post.user.avatar.url(:thumb) %>
             </div>
-            
-            <div class="panel-body" style="overflow: scroll; height: 380px;">
-              <% @posts.reverse.each do |post| %>
-              <div class="row content-post">
-                <div class="col-md-1 avatar pull-left"><%= image_tag post.user.avatar.url(:thumb) %>
-                </div>
-                <div class="col-md-11">
-                  <div class="row">
-                    <div class="col-md-12 content-details">
-                      <p>
-                        <b><%= post.user.pseudo %></b>
-                        <span class="timestamp"> a posté le <%= creation_post(post) %></span>
-                        <span class="humeur pull-right">Humeur : <%= post.user.tag %></span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 content-message">
-                      <p>
-                        <%= post.content %>
-                      </p>
-                    </div>
-                  </div>
+            <div class="col-md-11">
+              <div class="row">
+                <div class="col-md-12 content-details">
+                  <p>
+                    <b><%= post.user.pseudo %></b>
+                    <span class="timestamp"> a posté le <%= creation_post(post) %></span>
+                    <span class="humeur pull-right">Humeur : <%= post.user.tag %></span>
+                  </p>
                 </div>
               </div>
-              <% end %>
-            </div>
-            <div class="panel-footer clearfix">
               <div class="row">
-                <%= render 'form' %>
+                <div class="col-md-12 content-message">
+                  <p>
+                    <%= post.content %>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
+          <% end %>
         </div>
       </div>
+
+      <div class="row form-post" style="margin-top:15px;">
+        <%= render 'form' %>
+      </div>
+
     </div>
 
-    <div class="col-md-2">
+    <div class="col-md-3">
 
       <%= render 'cartouche_membres' %>
-      <%= render 'cartouche_derniers_posts' %>
+      <%= render 'cartouche_amis' %>
+      <!-- En attente pour le moment -->
+      <!-- <%= render 'cartouche_derniers_posts' %> -->
 
     </div>
 

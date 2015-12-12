@@ -43,7 +43,8 @@ html {
 body {
     height: 100%;
     padding-top: 50px;
-    background-color: #f1f1f1;
+    padding-bottom: 50px;
+    background-color: #fff;
 }
 
 /* Background du body différent à la connexion*/
@@ -53,6 +54,13 @@ body#connexion {
     background-size: cover;
     background-position: center;
     padding-top: 50px;
+}
+.container-fluid#content {
+    padding: 0;
+}
+
+h2 {
+    padding-bottom: 20px;
 }
 
 
@@ -124,6 +132,36 @@ body#connexion {
     text-align: left;
  }
 
+/*************** Section-Gauche ****************/
+/***********************************************/
+
+.section-gauche {
+    color: white;
+}
+
+
+
+/*************** Section-Droite ****************/
+/***********************************************/
+
+.section-droite {
+    hr {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+    .jumbotron {
+        background-color: #fff;
+    }
+    .form-post {
+        padding: 10px;
+        background-color: #f1f1f1;
+        border-radius: 6px;
+    }
+    .scrollable {
+        overflow: scroll;
+        height: 530px;
+    }
+}
 
 
 /***** Les offres *****/

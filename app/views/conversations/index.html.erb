@@ -1,30 +1,29 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 jumbotron">
-      <div class="row">
-        <div class="col-md-5">
-          <h1>Gérer mes<br />conversations</h1><hr>
-          <div class="row">
-            <div class="col-sm-12">
-              <ul class="nav nav-pills nav-stacked">
-                <%= mailbox_section 'inbox', @box %>
-                <%= mailbox_section 'sent', @box %>
-                <%= mailbox_section 'trash', @box %>
-                <%= link_to 'Démarrer une conversation', new_message_path, class: 'btn btn-lg btn-primary pull-right' %>
-              </ul>
-            </div>
+<div class="row">
+  <div class="col-md-12 jumbotron">
+    <div class="row">
+      <div class="col-md-5">
+        <h1>Gérer mes<br />conversations</h1><hr>
+        <div class="row">
+          <div class="col-sm-12">
+            <ul class="nav nav-pills nav-stacked">
+              <%= mailbox_section 'inbox', @box %>
+              <%= mailbox_section 'sent', @box %>
+              <%= mailbox_section 'trash', @box %>
+              <%= link_to 'Démarrer une conversation', new_message_path, class: 'btn btn-lg btn-primary pull-right', style:"margin-top: 20px" %>
+            </ul>
           </div>
         </div>
-        <div class="col-md-7" style="margin-top: 25px;">
-          <% if @box == 'trash' %>
-            <p><%= link_to 'Empty trash', empty_trash_conversations_path, class: 'btn btn-danger', method: :delete,
-                     data: {confirm: 'Are you sure?'} %></p>
-          <% end %>
-          <ul class="list-group">
-            <%= render partial: 'conversations/conversation', collection: @conversations %>
-          </ul>
-        </div>
+      </div>
+      <div class="col-md-7" style="margin-top: 25px;">
+        <% if @box == 'trash' %>
+          <p><%= link_to 'Empty trash', empty_trash_conversations_path, class: 'btn btn-danger', method: :delete,
+                   data: {confirm: 'Are you sure?'} %></p>
+        <% end %>
+        <ul class="list-group">
+          <%= render partial: 'conversations/conversation', collection: @conversations %>
+        </ul>
       </div>
     </div>
   </div>
 </div>
+
