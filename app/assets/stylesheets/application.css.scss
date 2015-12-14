@@ -151,6 +151,7 @@ h2 {
     }
     .jumbotron {
         background-color: #fff;
+        padding-top: 20px;
     }
     .form-post {
         padding: 10px;
@@ -160,6 +161,9 @@ h2 {
     .scrollable {
         overflow: scroll;
         height: 530px;
+    }
+    .pseudo {
+        color: #337AB7;
     }
 }
 
