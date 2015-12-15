@@ -4,7 +4,7 @@
 
 [![Stories in Sprint](https://badge.waffle.io/riquet28/wilder.svg?label=sprint&title=Sprint)](https://waffle.io/riquet28/wilder)
 
-[![Stories in In Progress ](https://waffle.io/riquet28/wilder.svg?label=In Progress&title=In Progress)](https://waffle.io/riquet28/wilder)
+[![Stories in In Progress](https://badge.waffle.io/riquet28/wilder.svg?label=In Progress&title=In Progress)](https://waffle.io/riquet28/wilder)
 
 
 ## Historique du Projet
