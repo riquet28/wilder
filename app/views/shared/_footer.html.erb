@@ -8,5 +8,14 @@
     </a>
     <a href="#" class="navbar-btn btn-danger btn pull-right">
     <span class="glyphicon glyphicon-star"></span>  Contacter le webmaster</a>
+
+
+    <div class="online-users">
+      <%= @online_users %>
+      <%= 'élève'.pluralize(@online_users) %>
+      <%= 'connecté'.pluralize(@online_users) %>
+    </div>
+
+    
   </div>
 </div>
