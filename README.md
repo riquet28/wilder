@@ -1,9 +1,10 @@
 # Projet Wilder (Ruby on Rails)
 
-[![Stories in Sprint](https://waffle.io/riquet28/wilder.png?label=sprint&title=Sprint)](https://badge.waffle.io/riquet28/wilder)
+[![Stories in Ready](https://badge.waffle.io/riquet28/wilder.svg?label=ready&title=Ready)](http://waffle.io/riquet28/wilder)
 
-[![Stories in In Progress ](https://waffle.io/riquet28/wilder.png?label=In Progress&title=In Progress)](https://badge.waffle.io/riquet28/wilder)
-In Progress  
+[![Stories in Sprint](https://badge.waffle.io/riquet28/wilder.svg?label=sprint&title=Sprint)](https://waffle.io/riquet28/wilder)
+
+[![Stories in In Progress ](https://waffle.io/riquet28/wilder.svg?label=In Progress&title=In Progress)](https://waffle.io/riquet28/wilder)
 
 
 ## Historique du Projet
