@@ -3,6 +3,11 @@
     <p class="navbar-text pull-left">
       © <%= Time.now.strftime("%Y") %> - Réalisation Merlin Eric
     </p>
+    <div class="report-a-bug">
+      <a href="https://github.com/riquet28/wilder/feedback/issues/new?title=Bug%20detected%20<%= request.fullpath %>&body=Description%20du%20bug%20rencontré&labels=bug" target="_blank" title="Rapporter un bug">
+        Reporter un bug
+      </a>
+    </div>
     <a href="#" class="navbar-btn btn-danger btn pull-right">
     <span class="glyphicon glyphicon-star"></span>  Contacter le webmaster</a>
   </div>
