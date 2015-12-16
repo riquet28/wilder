@@ -23,10 +23,10 @@ class ApplicationController < ActionController::Base
       current_user.update(last_ping_at: DateTime.now.in_time_zone)
     end
   end
+
   # Membres en ligne
   def count_online_users
     @online_users = User.online.count
   end
-
 
 end

@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Membres en ligne
-  scope :online, -> { where("last_ping_at > ?", 30.minutes.ago) }
+  scope :online, -> { where("last_ping_at > ?", 10.minutes.ago) }
 
   has_attached_file :avatar, styles: {
     medium: "200x200>",
