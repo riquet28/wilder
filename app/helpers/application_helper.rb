@@ -13,4 +13,13 @@ module ApplicationHelper
     image_tag gravatar_image_url(user.email, size: size), title: title, class: 'img-rounded'
   end
 
+  def en_ligne(current_user)
+    @online_users = User.online
+    if @online_users.include?(current_user)
+      "En ligne"
+    else
+      "Hors-ligne"
+    end
+  end
+
 end

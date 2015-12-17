@@ -4,10 +4,10 @@ class UserController < ApplicationController
   #before_action :authenticate_owner!
   before_filter :set_user, only: [:show, :edit, :update]
 
-
 	def index
-		@users = User.all
-    @users = User.order('created_at DESC').paginate(page: params[:page], per_page: 30)
+    @users = User.all
+    # ?? Utilités ??
+    #@users = User.order('created_at DESC').paginate(page: params[:page], per_page: 30)
 	end
 
   def show

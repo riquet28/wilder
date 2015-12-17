@@ -8,8 +8,12 @@ class PostsController < ApplicationController
     @posts = Post.all
     @newpost = Post.new
     @users = User.all
+    @users_online = @users.online.sort_pseudo_user
+    @users_offline = @users - @users_online.sort_pseudo_user
+    @sort_users = @users_online + @users_offline
     @titre = "Accueil"
     @lastpost = Post.last(3)
+
   end
 
   # GET /posts/1
@@ -81,4 +85,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:user_id, :content, :pseudo, :avatar)
     end
+    
 end

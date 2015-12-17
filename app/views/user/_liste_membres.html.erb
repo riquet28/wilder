@@ -1,8 +1,8 @@
-<% @users.each do |user| %>
+<% @sort_users.each do |user| %>
   <li>
       <!-- Lien menant à la modale -->
       <a href="#" class="lien-carte-visite" data-toggle="modal" data-target="#myModal<%=user.id%>">
-        <%= image_tag user.avatar.url(:thumb) %><%= pseudo_mail(user) %> | Voir <i class="fa fa-eye"></i>
+        <%= image_tag user.avatar.url(:thumb) %><%= pseudo_mail(user) %> | Voir <i class="fa fa-eye"></i> | <%= en_ligne(user) %>
       </a>
 
       <!-- Modale -->
@@ -41,11 +41,9 @@
           </div>
         </div>
       </div>
+    </div>
   </li>
 <% end %>
-
-
-
 
 
 

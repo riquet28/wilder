@@ -24,12 +24,6 @@ module UserHelper
 
   # Fonctionne pas pour le moment
   # Méthode si user en ligne
-  def en_ligne(user)
-    if user_signed_in?
-      "En ligne"
-    else
-      "Hors-ligne"
-    end
-  end
+  
 
 end

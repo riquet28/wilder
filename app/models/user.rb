@@ -7,6 +7,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # Membres en ligne
+  scope :online, -> { where("last_ping_at > ?", 10.minutes.ago) }
+  # Trie les pseudos de a -> z en downant la casse
+  scope :sort_pseudo_user, -> {order("lower(pseudo) asc")}
+
   has_attached_file :avatar, styles: {
     medium: "200x200>",
     thumb: "40x40>",
@@ -21,5 +26,6 @@ class User < ActiveRecord::Base
   def mailboxer_email(object)
     email
   end
+
   
 end
