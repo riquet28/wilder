@@ -11,7 +11,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
-              <h3 id="myModalLabel"><%= image_tag user.avatar.url(:thumb) %> Carte de visite de <%= user.pseudo %></h3>
+              <h3 class="myModalLabel"><%= image_tag user.avatar.url(:thumb) %> Carte de visite de <%= user.pseudo %></h3>
             </div>
             <div class="modal-body">
               <div class="row">
@@ -36,8 +36,9 @@
               </div>
             </div>
             <div class="modal-footer">
-            <button aria-hidden="true" class="btn pull-left" data-dismiss="modal">Close</button>
-            <%= link_to "Envoyer un message à #{user.pseudo}", new_message_path(@user), class: "btn btn-primary" %>
+              <button aria-hidden="true" class="btn pull-left" data-dismiss="modal">Close</button>
+              <%= link_to "Envoyer un message à #{user.pseudo}", new_message_path(@user), class: "btn btn-primary" %>
+            </div>
           </div>
         </div>
       </div>
