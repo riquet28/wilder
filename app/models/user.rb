@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   # Membres en ligne
   scope :online, -> { where("last_ping_at > ?", 10.minutes.ago) }
+  # Trie les pseudos de a -> z en downant la casse
+  scope :sort_pseudo_user, -> {order("lower(pseudo) asc")}
 
   has_attached_file :avatar, styles: {
     medium: "200x200>",
@@ -24,5 +26,6 @@ class User < ActiveRecord::Base
   def mailboxer_email(object)
     email
   end
+
   
 end
