@@ -1,48 +1,52 @@
 <% @sort_users.each do |user| %>
-  <li>
-      <!-- Lien menant à la modale -->
-      <a href="#" class="lien-carte-visite" data-toggle="modal" data-target="#myModal<%=user.id%>">
-        <%= image_tag user.avatar.url(:thumb) %><%= pseudo_mail(user) %> | Voir <i class="fa fa-eye"></i> | <%= en_ligne(user) %>
-      </a>
 
-      <!-- Modale -->
-      <div class="modal fade" id="myModal<%= user.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
-              <h3 id="myModalLabel"><%= image_tag user.avatar.url(:thumb) %> Carte de visite de <%= user.pseudo %></h3>
-            </div>
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-md-4">
-                  <%= logo(user.langage) %>
+  <li data-toggle="tooltip" title="Cliquez sur le pseudo pour voir la carte de visite">
+
+    <!-- Lien menant à la modale -->
+    <a href="#" class="lien-carte-visite" data-toggle="modal" data-target="#myModal<%=user.id%>">
+      <%= image_tag user.avatar.url(:thumb) %><%= pseudo_mail(user) %><%= en_ligne(user) %>
+    </a>
+
+    <!-- Modale -->
+    <div class="modal fade" id="myModal<%= user.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
+            <h3 id="myModalLabel"><%= image_tag(user.avatar.url(:thumb), :class => "avatar-visite") %> Carte de visite de <%= user.pseudo %></h3>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <%= logo(user.langage) %>
+              </div>
+              <div class="col-md-8">
+                <h4>Présentation</h4>
+                <%= user.description %>
+                <h4>Compétences Web</h4>
+                <%= user.competence %>
+                <div class="row">
+                  <div class="col-md-12">
+                    <h4>Me contacter</h4>
+                  </div>
                 </div>
-                <div class="col-md-8">
-                  <h4>Présentation</h4>
-                  <%= user.description %>
-                  <h4>Compétences Web</h4>
-                  <%= user.competence %>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <h4>Me contacter</h4>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6"><%= user.telephone %></div>
-                    <div class="col-md-6"><%= user.email %></div>
-                  </div>
+                <div class="row">
+                  <div class="col-md-6"><%= user.telephone %></div>
+                  <div class="col-md-6"><%= user.email %></div>
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+          </div>
+          <div class="modal-footer">
             <button aria-hidden="true" class="btn pull-left" data-dismiss="modal">Close</button>
             <%= link_to "Envoyer un message à #{user.pseudo}", new_message_path(@user), class: "btn btn-primary" %>
           </div>
         </div>
       </div>
     </div>
+
   </li>
+
 <% end %>
 
 
