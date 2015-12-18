@@ -136,6 +136,13 @@ h2 {
     text-align: left;
  }
 
+/******************* Icones ********************/
+/***********************************************/
+
+.fa {
+    margin-right: 10px;
+}
+
 /*************** Section-Gauche ****************/
 /***********************************************/
 
@@ -149,6 +156,9 @@ h2 {
 /***********************************************/
 
 .section-droite {
+    h3, h4 {
+        margin-top: 0px;
+    }
     hr {
         margin-top: 30px;
         margin-bottom: 10px;
@@ -168,6 +178,21 @@ h2 {
     }
     .pseudo {
         color: #337AB7;
+    }
+    .separation-titre {
+        margin-top: 5px;
+    }
+    .members-list li {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-decoration: none;
+            img{
+                margin-right: 10px;
+            }
+    }
+    .members-list li:hover {
+        background-color: #f1f1f1;
+        border-radius: 6px;
     }
 }
 
