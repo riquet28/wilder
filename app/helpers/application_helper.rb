@@ -16,9 +16,9 @@ module ApplicationHelper
   def en_ligne(current_user)
     @online_users = User.online
     if @online_users.include?(current_user)
-      "En ligne"
+      content_tag( :i, nil, class: 'fa fa-circle circle-online pull-right' )
     else
-      "Hors-ligne"
+      content_tag( :i, nil, class: 'fa fa-circle-o circle-offline pull-right' )
     end
   end
 

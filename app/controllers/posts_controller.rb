@@ -9,8 +9,8 @@ class PostsController < ApplicationController
     @newpost = Post.new
     @users = User.all
     @users_online = @users.online.sort_pseudo_user
-    @users_offline = @users - @users_online.sort_pseudo_user
-    @sort_users = @users_online + @users_offline
+    @users_offline = @users - @users_online
+    @sort_users = @users_online + @users_offline.sort { |x,y| x.pseudo.downcase <=> y.pseudo.downcase }
     @titre = "Accueil"
     @lastpost = Post.last(3)
 
