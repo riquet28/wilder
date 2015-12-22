@@ -1,17 +1,14 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/"><h2 class="titre-nav">Wilder <span>Projet</span></h2></a>
+      <a class="navbar-brand" href="/"><h3>Wild<span>Slack</span></h3></a>
     </div>
-
-    <ul class="nav navbar-nav navbar-right">
-
+    <ul class="nav navbar-nav navbar-right input-connexion">
 			<%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name), layout: :inline) do |f| %>
-	  	<%= f.email_field :email, hide_label: true, placeholder: "Email" %>
-	  	<%= f.password_field :password, hide_label: true, placeholder: "Mot de passe" %>
-		  <%= f.primary "Connexion" %>
+  	  	<%= f.email_field :email, hide_label: true, placeholder: "Email" %>
+  	  	<%= f.password_field :password, hide_label: true, placeholder: "Mot de passe" %>
+  		  <%= f.primary "Connexion" %>
 			<% end %>
-		        
 		</ul>
   </div>
 </nav>

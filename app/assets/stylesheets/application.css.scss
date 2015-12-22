@@ -70,12 +70,38 @@ h2 {
 .navbar {
   border-radius: 0;
   margin-bottom: 0;
+  background-color: #000;
+
+  h3 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: inherit;
+
+    span {
+      color: #337AB7;
+    }
+
+  }
+
+  .input-connexion {
+    margin-top: 7px;
+  }
+
 }
 
 .titre-nav {
 	margin-top: 0;
 }
 
+
+
+/****************** $FOOTER ********************/
+/***********************************************/
+
+footer {
+  background-color: #000;
+}
 
 
 /************* Page de connexion ***************/
@@ -91,6 +117,42 @@ h2 {
     left: 50%;
     transform: translate(-50%, -50%);
   max-width: 950px;
+
+  h1 {
+    font-size: 3.8em;
+    line-height: 0.9;
+    margin-top: 40px;
+    margin-left: 30px;
+
+    span {
+      color: #337AB7;
+    }
+
+    small {
+      color: #fff;
+      font-style: italic;
+    }
+
+  }
+
+  h2 {
+    padding-bottom: 0;
+  }
+
+  p {
+      font-size: 1.7em;
+      margin-left: 30px;
+      margin-top: 25px
+  }
+
+  a {
+    margin-right: 20px;
+  }
+
+  label.required:after {
+  content:" *";
+  }
+
 }
 
 .form-inscrip-rapid {
