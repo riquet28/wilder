@@ -14,19 +14,18 @@
         
         <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
+        <% end %>
 
-      <%= f.password_field :password, label: "Mot de passe", icon: "user", placeholder: "Votre mot de passe" %>
+      <%= f.password_field :password, label: "Mot de passe", icon: "fa fa-user", placeholder: "Votre mot de passe" %>
       <%= f.password_field :password_confirmation, label: "Confirmez votre mot de passe", autocomplete: "off", placeholder: "Minimum 8 caractères" %>
 
-        <%= f.form_group do %>
-          <%= f.check_box :remember_me, label: "Se souvenir de moi" %>
-        <% end %>
-      <%= f.primary "Inscription et Go !!!", control_col: "col-sm-7 col-offset-sm-4" %>
+      <%= f.form_group do %>
+        <%= f.primary "Inscription et Go !!!" %>
+      <% end %>
     <% end %>
 
   </div>
 </div>
 
 
-<%= render "devise/shared/links" %>
+
