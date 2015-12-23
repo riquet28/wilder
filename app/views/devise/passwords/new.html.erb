@@ -1,16 +1,28 @@
-<h2>Vous avez oublié votre mot de passe?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 panneau-accueil vertical-center">
+        <div class="row">
+          <div class="col-md-7">
+            <h1>Wild<span>Slack</span><br /><small>Restons connectés !!!</h1>
+          </div>
+          <div class="col-md-5">
+            <h2 class="text-center">Mot de passe oublié ?</h2>
+            <%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, layout: :horizontal, label_col: "col-sm-4", control_col: "col-sm-7") do |f| %>
+              <%= devise_error_messages! %>
+              <%= f.email_field :email, label: "Votre email", placeholder: "Saisissez votre email" %>
+              <%= f.form_group do %>
+                <%= f.primary "Rebooter mon mot de passe" %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+
+
+
