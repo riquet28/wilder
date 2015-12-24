@@ -17,6 +17,7 @@
 @import 'chosen';
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "navigation";
 
 
 /********** A faire *****************/
@@ -72,32 +73,7 @@ h2 {
 /***************** Navigation ******************/
 /***********************************************/
 
-.navbar {
-  border-radius: 0;
-  margin-bottom: 0;
-  background-color: #000;
 
-  h3 {
-    color: #fff;
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: inherit;
-
-    span {
-      color: #337AB7;
-    }
-
-  }
-
-  .input-connexion {
-    margin-top: 7px;
-  }
-
-}
-
-.titre-nav {
-	margin-top: 0;
-}
 
 
 
