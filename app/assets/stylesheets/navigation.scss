@@ -1,0 +1,46 @@
+.navbar {
+  border-radius: 0;
+  margin-bottom: 0;
+  background-color: #000;
+
+  h3 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: inherit;
+
+    span {
+      color: #337AB7;
+    }
+
+  }
+
+  .fa {
+    margin-right: 5px;
+  }
+
+  .input-connexion {
+    margin-top: 7px;
+  }
+
+
+}
+
+
+.navbar-inverse .navbar-nav > li > a:hover{
+    border-bottom: 3px solid #337AB7;
+    color: #fff;
+    }
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus,
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+  border-bottom: 3px solid #337AB7;
+  color: #fff;
+}
+
+
+
