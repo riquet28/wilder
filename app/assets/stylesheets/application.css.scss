@@ -38,6 +38,11 @@
 
 html {
   height: 100%;
+
+  .turbolinks-progress-bar::before {
+  background-color: #337AB7 !important;
+  height: 4px !important;
+}
 }
 
 body {
