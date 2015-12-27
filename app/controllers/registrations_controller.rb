@@ -26,7 +26,9 @@ class RegistrationsController < Devise::RegistrationsController
       :adresse,
       :telephone,
       :langage,
-      :competence
+      :competence,
+      :latitude,
+      :longitude
     )
   end
 

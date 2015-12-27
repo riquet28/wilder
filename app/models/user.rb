@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # Localisation de l'utilisateur
+  geocoded_by :adresse
+  after_validation :geocode
+
   # Membres en ligne
   scope :online, -> { where("last_ping_at > ?", 10.minutes.ago) }
   # Trie les pseudos de a -> z en downant la casse

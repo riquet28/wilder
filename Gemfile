@@ -39,6 +39,8 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 # Font Awesome
 gem 'font-awesome-sass', '~> 4.2.0'
+# Geocoder
+gem 'geocoder'
 
 
 # Use jquery as the JavaScript library

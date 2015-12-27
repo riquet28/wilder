@@ -28,7 +28,7 @@
 
     <h2>Mes infos professionnelles</h2>
 
-      <%= f.text_field :langage, label: "Mon langage web" %>
+      <%= f.select :langage, [["Ruby"], ["Php"], ["Javascript"]], { label: "Choisissez le langage:" }, { class: "selectpicker" } %>
       <%= f.text_field :competence, label: "Mes compétences" %>
       <%= f.text_area :description, label: "Ma description" %>
 

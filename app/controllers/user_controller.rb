@@ -1,5 +1,5 @@
 class UserController < ApplicationController
-  
+
   #before_action :authenticate_owner!
   before_filter :set_user, only: [:show, :edit, :update]
 
@@ -35,7 +35,7 @@ class UserController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:nom, :pseudo, :tagline, :introduction, :avatar)
+      params.require(:user).permit(:nom, :pseudo, :tagline, :introduction, :adresse, :avatar, :latitude, :longitude)
     end
 
     # def authenticate_owner!
