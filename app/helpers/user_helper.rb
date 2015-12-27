@@ -22,8 +22,4 @@ module UserHelper
     end
   end
 
-  # Fonctionne pas pour le moment
-  # Méthode si user en ligne
-  
-
 end

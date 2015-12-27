@@ -15,6 +15,10 @@ class User < ActiveRecord::Base
   scope :online, -> { where("last_ping_at > ?", 10.minutes.ago) }
   # Trie les pseudos de a -> z en downant la casse
   scope :sort_pseudo_user, -> {order("lower(pseudo) asc")}
+  # Selectionne les utilisateurs par leur langage
+  scope :langage_ruby, -> { select { |user| user.langage == "Ruby" }}
+  scope :langage_js, -> { select { |user| user.langage == "Javascript" }}
+  scope :langage_php, -> { select { |user| user.langage == "Php" }}
 
   has_attached_file :avatar, styles: {
     medium: "200x200>",
@@ -30,6 +34,6 @@ class User < ActiveRecord::Base
   def mailboxer_email(object)
     email
   end
-
   
+
 end

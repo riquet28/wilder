@@ -6,8 +6,7 @@
 
   <div class="row">
     <div class="col-md-12">
-      <h1 class="text-center">La promo Août 2015 - Janv 2016</h1>
-      <p class="text-center">Les meilleurs !!!</p>
+      <h1 class="text-center">Promo Août 2015 - Janv 2016 : Only the bests !!!</h1>
     </div>
   </div>
 
@@ -32,9 +31,47 @@
     </div>
     <div class="col-md-4">
       <h4 class="text-center">Les Wilders par langage</h4>
+      <hr>
       <div class="row">
         <div class="col-md-12">
-          <h5>Les rubystes</h5>
+          <h5>Les rubystes : </h5>
+          <% @users.langage_ruby.in_groups_of(6, false).each do |group| %>
+            <div class="row">
+              <% group.each do |user| %>
+                <div class="col-md-2">
+                  <a href="#" data-toggle="tooltip" title="<%= user.pseudo %>"><%= image_tag user.avatar.url(:thumb) %></a>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h5>Les Javascripts : </h5>
+          <% @users.langage_js.in_groups_of(6, false).each do |group| %>
+            <div class="row">
+              <% group.each do |user| %>
+                <div class="col-md-2">
+                  <a href="#" data-toggle="tooltip" title="<%= user.pseudo %>"><%= image_tag user.avatar.url(:thumb) %></a>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h5>Les Phpistes : </h5>
+          <% @users.langage_php.in_groups_of(6, false).each do |group| %>
+            <div class="row">
+              <% group.each do |user| %>
+                <div class="col-md-2">
+                  <a href="#" data-toggle="tooltip" title="<%= user.pseudo %>"><%= image_tag user.avatar.url(:thumb) %></a>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
