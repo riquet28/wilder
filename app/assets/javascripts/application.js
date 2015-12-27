@@ -18,6 +18,8 @@
 //= require bootstrap-sprockets
 //= require bootstrap-modal
 //= require bootstrap-modalmanager
+//= require underscore
+//= require gmaps/google
 //= require_tree .
 
 Turbolinks.enableProgressBar();

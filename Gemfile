@@ -41,6 +41,8 @@ gem 'bootstrap-will_paginate'
 gem 'font-awesome-sass', '~> 4.2.0'
 # Geocoder
 gem 'geocoder'
+# Gmaps4rails
+gem 'gmaps4rails'
 
 
 # Use jquery as the JavaScript library

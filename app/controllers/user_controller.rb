@@ -7,6 +7,11 @@ class UserController < ApplicationController
     @users = User.all
     # ?? Utilités ??
     #@users = User.order('created_at DESC').paginate(page: params[:page], per_page: 30)
+    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+      marker.infowindow user.pseudo
+    end
 	end
 
   def show
