@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
     thumb: "25x25",
     thumb1: "50x50>" 
   }, 
-    default_url: "/images/missing.jpg" 
+    default_url: "/images/:style/missing.jpg" 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   # Mailboxer functionality

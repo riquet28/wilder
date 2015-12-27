@@ -1,0 +1,61 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">La promo Août 2015 - Janv 2016</h1>
+      <p class="text-center">Les meilleurs !!!</p>
+    </div>
+  </div>
+
+<hr>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Liste des Wilders</h3>
+    </div>
+  </div>
+
+
+  <% @users.each do |user| %>
+  
+    <div class="row well">
+      <div class="col-md-3">
+        <p>
+          <% if current_user.avatar.exists? %>
+            <%= image_tag user.avatar.url(:medium) %>
+          <% end %>
+        </p>
+        <p>
+          <b><i class="fa fa-user"></i><%= user.nom %> <%= user.prenom %></b><br/>
+          <i class="fa fa-phone"></i><%= user.telephone %><br/>
+          <i class="fa fa-envelope"></i><%= user.email %><br/>
+          <i class="fa fa-map-marker"></i><%= user.adresse %>
+        </p>
+      </div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-12">
+            <h4>Développeur <%= user.langage %></h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+              <%= user.competence %>
+            </p>
+            <p>
+              <%= user.description %>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <%= link_to "Envoyer un message à #{user.pseudo}", new_message_path(@user), class: "btn btn-primary pull-right" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+
+</div>
