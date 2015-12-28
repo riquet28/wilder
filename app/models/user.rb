@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 	
   has_many :posts, :dependent => :destroy, :foreign_key => "user_id"
+  has_many :offres
+  
   belongs_to :profile
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

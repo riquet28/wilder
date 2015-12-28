@@ -1,11 +1,42 @@
-<hr>
-<div class="row">
-  <div class="col-md-12">
-    <h3><i class="fa fa-envelope"></i>Follows<span class="badge pull-right">??</span></h3>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+        <i class="fa fa-gamepad"></i>Challenger (jeu)
+      </a>
+    </h4>
+  </div>
+  <div id="collapseThree" class="panel-collapse collapse">
+    <div class="panel-body">
+      <P>Classement :</P>
+      <P>Nb de points :</P>
+      <P>Challenges réussis :</P>
+      <%= link_to "Jouer !", new_message_path, class: "btn btn-primary center-block" %>
+    </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-md-12">
-    <%= link_to "Voir", '#', class: "btn btn-primary center-block" %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+        <i class="fa fa-list-ul"></i>Todo Liste<span class="badge pull-right">??</span>
+      </a>
+    </h4>
+  </div>
+  <div id="collapseFour" class="panel-collapse collapse">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-10">
+          <p>Nb. de tâche(s) :</p>
+        </div>
+        <div class="col-md-2">
+          <p>??</p>
+        </div>
+      </div>
+      <%= link_to "Voir la liste", new_message_path, class: "btn btn-primary center-block" %>
+    </div>
   </div>
 </div>
+
+

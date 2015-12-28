@@ -184,6 +184,24 @@ footer {
 
 .section-gauche {
     color: white;
+
+    h3 {
+      margin-top: 10px;
+    }
+
+    p {
+      margin-bottom: 5px;
+    }
+
+    .col-gauche {
+       color: black;
+       border-right: solid 1px black;
+       margin-top: 5px;
+       position: fixed;
+       background-color: #f1f1f1;
+       height: 100%;
+       z-index: 10;
+    }
 }
 
 
