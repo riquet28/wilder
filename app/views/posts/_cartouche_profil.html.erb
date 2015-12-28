@@ -1,45 +1,52 @@
-<div class="row">
-  <div class="col-md-12">
-    <h4><i class="fa fa-user"></i>Mon Profil</h4>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><i class="fa fa-user"></i>Mon Profil</a>
+    </h4>
+  </div>
+  <div id="collapseOne" class="panel-collapse collapse in">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-12">
+          <p>
+            <b>Mon pseudo :</b><br>
+            <%= pseudo_mail(current_user) %><%= en_ligne(current_user) %>
+          </p>
+          <p>
+            <b>Mes contributions</b><br>
+            Nb de posts : <%= nb_posts_user(current_user) %><br>
+            Nb d'annonces : <%= nb_offres_user(current_user) %>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p><b>Humeur :</b><br/>
+            "<%= current_user.tag %>"</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <p><b>Langage web :</b><br />
+            <%= current_user.langage %>
+          </p>
+        </div>
+        <div class="col-md-4">
+          <%= logo(current_user.langage) %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <%= link_to "Mettre à jour", edit_user_registration_path, class: "btn btn-primary center-block" %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-9">
-    <p>
-      <%= en_ligne(current_user) %><b><%= pseudo_mail(current_user) %></b>
-      Contributions :
-    </p>
-  </div>
-  <div class="col-md-3">
-    <p>
-      <% if current_user.avatar.exists? %>
-        <%= image_tag current_user.avatar.url(:thumb) %>
-      <% end %>
-    </p>
-  </div>
-</div>
+    
 
-<div class="row">
-  <div class="col-md-12">
-    <p><b>Humeur :</b><br/>
-      "<%= current_user.tag %>"</p>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-md-8">
-    <p><b>Langage web :</b><br />
-      <%= current_user.langage %>
-    </p>
-  </div>
-  <div class="col-md-4">
-    <%= logo(current_user.langage) %>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-md-12">
-    <%= link_to "Mettre à jour votre profil", edit_user_registration_path, class: "btn btn-primary center-block" %>
-  </div>
-</div>
+
+

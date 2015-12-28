@@ -1,5 +1,6 @@
 module ApplicationHelper
 
+  # Affiche automatiquement le nom de la page courante
   def titre
     base_titre = "Projet Wilder"
     if @titre.nil?
@@ -9,10 +10,12 @@ module ApplicationHelper
     end
   end
 
-  def gravatar_for(user, size = 30, title = user.nom)
-    image_tag gravatar_image_url(user.email, size: size), title: title, class: 'img-rounded'
-  end
+  # En attente si utilisation ou non de gravatar
+  # def gravatar_for(user, size = 30, title = user.nom)
+  #   image_tag gravatar_image_url(user.email, size: size), title: title, class: 'img-rounded'
+  # end
 
+  # Affiche si l'utilisateur est en ligne ou hors-ligne
   def en_ligne(current_user)
     @online_users = User.online
     if @online_users.include?(current_user)
@@ -20,6 +23,16 @@ module ApplicationHelper
     else
       content_tag( :i, nil, class: 'fa fa-circle-o circle-offline pull-right' )
     end
+  end
+
+  # Affiche le nombre de posts "postés" par l'utilisateur
+  def nb_posts_user(current_user)
+    current_user.posts.count
+  end
+
+  # Affiche le nombre d'offres partagées par l'utilisateur
+  def nb_offres_user(current_user)
+    current_user.offres.count
   end
 
 end

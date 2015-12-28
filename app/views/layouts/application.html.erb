@@ -15,14 +15,19 @@
 
   <body>
     <%= render 'shared/navigation' %>
+
   <div class="container-fluid" id="content">
 
     <section class="section-gauche">
       <div class="col-md-2 col-gauche">
         <h3 class="text-center">Tableau de bord</h3>
-        <%= render 'posts/cartouche_profil' %>
-        <%= render 'posts/cartouche_messages' %>
-
+        <div class="bs-example">
+          <div class="panel-group" id="accordion">
+            <%= render 'posts/cartouche_profil' %>
+            <%= render 'posts/cartouche_messages' %>
+            <%= render 'posts/cartouche_follow' %>
+          </div>
+        </div>
       </div>
     </section>
 
