@@ -18,15 +18,16 @@
   <div class="container-fluid" id="content">
 
     <section class="section-gauche">
-      <div class="col-md-2" style="background-color: #101010;">
+      <div class="col-md-2 col-gauche">
+        <h3 class="text-center">Tableau de bord</h3>
         <%= render 'posts/cartouche_profil' %>
         <%= render 'posts/cartouche_messages' %>
-        <%= render 'posts/cartouche_follow' %>
+
       </div>
     </section>
 
     <section class="section-droite">
-      <div class="col-md-10">
+      <div class="col-md-10" style="margin-left: 16.6%;">
         <div class="row">
           <div class="col-xs-12">
             <% flash.each do |name, msg| -%>
