@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   get 'user/index'
   
   resources :offres
-  resources :challenges
+  
+  resources :challenges do
+    resources :participations
+  end
 
   resources :conversations, only: [:index, :show, :destroy] do
     member do

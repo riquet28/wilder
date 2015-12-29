@@ -10,6 +10,8 @@ class ChallengesController < ApplicationController
   # GET /challenges/1
   # GET /challenges/1.json
   def show
+    @participations = @challenge.participations
+    @participation = @challenge.participations.new
   end
 
   # GET /challenges/new

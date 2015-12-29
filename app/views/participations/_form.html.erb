@@ -1,0 +1,7 @@
+<%= form_for [@challenge, @participation] do |f| %>
+
+  <%= f.text_field :user_name, placeholder: "user name" %><br />
+  <%= f.text_area :message %><br />
+  <%= f.submit %>
+
+<% end %>
