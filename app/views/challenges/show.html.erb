@@ -1,30 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @challenge.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @challenge.description %>
-</p>
+<%= render @challenge %>
 
 <p>
   <strong>Expires at:</strong>
-  <%= @challenge.expires_at %>
+  <%= @challenge.expires_at.strftime("%d %b %Y") %>
 </p>
 
-<p>
-  <strong>Points:</strong>
-  <%= @challenge.points %>
-</p>
+
 
 <%= link_to 'Edit', edit_challenge_path(@challenge) %> |
 <%= link_to 'Back', challenges_path %>
 
 <hr>
 
+<h1>Les Participants</h1>
+
+
+<hr>
 <%= render 'participations' %>
 
 <hr>

@@ -1,4 +1,4 @@
 <li>
-  <p><%= participation.user_name %></p>
+  <p><%= link_to participation.user.pseudo, participation.user  %><%= image_tag participation.user.avatar.url(:thumb) %></p>
   <p><%= participation.message %></p>
 </li>

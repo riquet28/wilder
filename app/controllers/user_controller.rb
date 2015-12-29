@@ -1,4 +1,5 @@
 class UserController < ApplicationController
+  #before_action :authenticate_user!
   before_filter :set_user, only: [:show, :edit, :update]
 
 	def index
@@ -11,6 +12,7 @@ class UserController < ApplicationController
 	end
 
   def show
+    @challenges = @user.challenges
   end
 
   def create
