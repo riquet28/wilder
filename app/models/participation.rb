@@ -6,4 +6,11 @@ class Participation < ActiveRecord::Base
   validates :challenge_id, presence: true
   validates :user_id, presence: true
 
+  after_create :give_points_to_user
+
+  def give_points_to_user
+    user.points += challenge.points
+    user.save
+  end
+
 end
