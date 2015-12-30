@@ -8,9 +8,9 @@
   </div>
   <div id="collapseThree" class="panel-collapse collapse">
     <div class="panel-body">
-      <P>Classement :</P>
-      <P>Nb de points : <%= @user.points %> pts</P>
-      <P>Challenges réussis :</P>
+      <P>Classement : (A venir)</P>
+      <P>Nb de points : <%= current_user.points %> pts</P>
+      <P>Challenges réussis :<%= current_user.participations.count %></P>
       <%= link_to "Jouer !", challenges_path, class: "btn btn-primary center-block" %>
       <%= link_to "Compte Challenger", user_path(current_user), class: "btn btn-primary center-block" %>
     </div>
