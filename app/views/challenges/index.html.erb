@@ -1,7 +1,22 @@
-<h1>Liste des Challenges</h1>
+<h1>Challenger<br>
+<small>Défiez, réalisez les challenges de vos amis et récupérez un max de point ! Oserez-vous ???</small></h1>
+<hr>
+
+<%= link_to 'Challenges en cours', challenges_path(:running => true), class: "btn btn-primary" %>  |  
+<%= link_to 'Challenges expirés', challenges_path(:expired => true), class: "btn btn-info" %>  |  
+<%= link_to 'Challenges "high_points"', challenges_path(:high_points => 50), class: "btn btn-success" %>
+
+<hr>
+<h2>Liste des Challenges</h2>
+
+<%= paginate @challenges %>
 
 <%= render @challenges %>
+
+<%= paginate @challenges %>
 
 <br>
 
 <%= link_to 'New Challenge', new_challenge_path %>
+
+<div style="margin-bottom: 70px;"></div>

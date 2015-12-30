@@ -11,7 +11,8 @@
       <P>Classement :</P>
       <P>Nb de points :</P>
       <P>Challenges réussis :</P>
-      <%= link_to "Jouer !", user_path(current_user), class: "btn btn-primary center-block" %>
+      <%= link_to "Jouer !", challenges_path, class: "btn btn-primary center-block" %>
+      <%= link_to "Compte Challenger", user_path(current_user), class: "btn btn-primary center-block" %>
     </div>
   </div>
 </div>

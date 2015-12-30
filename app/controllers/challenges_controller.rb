@@ -4,7 +4,11 @@ class ChallengesController < ApplicationController
   # GET /challenges
   # GET /challenges.json
   def index
-    @challenges = Challenge.all
+    @challenges = Challenge
+    @challenges = @challenges.running if params[:running]
+    @challenges = @challenges.expired if params[:expired]
+    @challenges = @challenges.high_points if params[:high_points]
+    @challenges = @challenges.page(params[:page])
   end
 
   # GET /challenges/1
