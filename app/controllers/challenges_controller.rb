@@ -33,15 +33,11 @@ class ChallengesController < ApplicationController
   # POST /challenges.json
   def create
     @challenge = Challenge.new(challenge_params)
-
-    respond_to do |format|
-      if @challenge.save
-        format.html { redirect_to @challenge, notice: 'Challenge was successfully created.' }
-        format.json { render :show, status: :created, location: @challenge }
-      else
-        format.html { render :new }
-        format.json { render json: @challenge.errors, status: :unprocessable_entity }
-      end
+    @challenge.user_id = current_user.id
+    if @challenge.save
+      redirect_to @challenge, notice: 'Participation was successfully updated'
+    else
+      render text: "Error"
     end
   end
 
@@ -77,6 +73,6 @@ class ChallengesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def challenge_params
-      params.require(:challenge).permit(:title, :description, :expires_at, :points)
+      params.require(:challenge).permit(:title, :description, :expires_at, :points, :user_id)
     end
 end

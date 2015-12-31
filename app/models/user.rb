@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :offres
   has_many :participations
   has_many :challenges, through: :participations
+  has_many :challenges
   
   belongs_to :profile
   # Include default devise modules. Others available are:
