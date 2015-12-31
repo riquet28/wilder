@@ -8,13 +8,25 @@
 
   <%= render @challenge %>
 
+  <div class="row">
+    <div class="col-md-12">
+      <% if current_user.id == @challenge.user_id %>
+        <%= link_to 'Modifier votre challenge', edit_challenge_path(@challenge), class: "btn btn-primary pull-right" %>
+      <% end %>
+      <%= link_to 'Retour à la liste des challenges', challenges_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+
+
+
+
+
 </div>
 
 
 
 
-<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
-<%= link_to 'Back', challenges_path %>
+
 
 <hr>
 
