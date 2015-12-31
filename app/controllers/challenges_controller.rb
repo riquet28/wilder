@@ -1,4 +1,5 @@
 class ChallengesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_challenge, only: [:show, :edit, :update, :destroy]
 
   # GET /challenges

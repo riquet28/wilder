@@ -1,9 +1,15 @@
-<%= render @challenge %>
+<div class="container-fluid">
 
-<p>
-  <strong>Expires at :</strong>
-  <%= @challenge.expires_at.strftime("%d %b %Y") %>
-</p>
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">Détail du challenge :</h1>
+    </div>
+  </div>
+
+  <%= render @challenge %>
+
+</div>
+
 
 
 
