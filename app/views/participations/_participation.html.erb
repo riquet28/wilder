@@ -1,4 +1,16 @@
-<li>
-  <p><%= link_to participation.user.pseudo, participation.user  %><%= image_tag participation.user.avatar.url(:thumb) %></p>
-  <p><%= participation.message %></p>
-</li>
+<% @participations.in_groups_of(6, false).each do |group| %>
+  
+  <div class="row thumb-participants">
+    <% group.each do |participation| %>
+      <div class="col-md-2">
+        <div>
+          <%= image_tag participation.user.avatar.url(:medium) %>
+          <h4><%= link_to participation.user.pseudo, participation.user  %></h4>
+          <p><%= participation.message %></p>
+        </div>
+      </div>
+     <% end %> 
+  </div>
+
+<% end %>
+
