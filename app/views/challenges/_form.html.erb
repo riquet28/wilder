@@ -1,14 +1,16 @@
-<%= simple_form_for(@challenge) do |f| %>
-  <%= f.error_notification %>
+<%= bootstrap_form_for(@challenge) do |f| %>
+  
+  <%= f.alert_message "Please fix the errors below." %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :expires_at %>
-    <%= f.input :points %>
+    <%= f.text_field :title, label: "Le titre du challenge" %>
+    <%= f.text_field :description, label: "Description du challenge" %>
+    <%= f.date_select :expires_at, label: "Date d'expiration du challenge"  %>
+    <%= f.text_field :points, label: "Le nombre de points du challenge" %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-actions pull-right" style="margin-bottom: 75px;">
+    <%= f.primary "Valider mon challenge" %>
   </div>
+
 <% end %>
