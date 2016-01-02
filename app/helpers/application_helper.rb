@@ -26,11 +26,13 @@ module ApplicationHelper
   end
 
   # Affiche le nombre de posts "postés" par l'utilisateur
+  # Dans un helper ou un model ? Un scope ?
   def nb_posts_user(current_user)
     current_user.posts.count
   end
 
   # Affiche le nombre d'offres partagées par l'utilisateur
+  # Dans un helper ou un model ? Un scope ?
   def nb_offres_user(current_user)
     current_user.offres.count
   end
