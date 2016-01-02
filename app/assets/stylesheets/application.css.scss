@@ -221,6 +221,12 @@ footer {
     margin-bottom: 10px;
   }
 
+  .avatar-post {
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 100%;        
+  }
+
   .jumbotron {
     background-color: #fff;
     padding-top: 20px;
@@ -260,6 +266,7 @@ footer {
       max-width: 25px;
       max-height: 25px;
       border-radius: 100%;
+
     }
 
     i {
@@ -292,12 +299,12 @@ footer {
   }
 
   .circle-offline {
-    color: red;
+    color: #337AB7;
     vertical-align: middle;
   }
 
   .circle-online {
-    color: red;
+    color: #337AB7;
   }
 
 }

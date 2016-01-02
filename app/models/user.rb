@@ -26,9 +26,8 @@ class User < ActiveRecord::Base
   scope :langage_php, -> { select { |user| user.langage == "Php" }}
 
   has_attached_file :avatar, styles: {
-    medium: "200x200>",
-    thumb: "25x25",
-    thumb1: "50x50>" 
+    medium: "100x100>",
+    thumb: "40x40" 
   }, 
     default_url: "/images/:style/missing.jpg" 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
