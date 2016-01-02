@@ -1,0 +1,45 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center" style="margin-bottom: 30px;">Détail du challenge :</h1>
+    </div>
+  </div>
+
+  <%= render @challenge %>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= link_to 'Retour à la liste des challenges', challenges_path, class: "btn btn-primary pull-right" %>
+      <% if current_user.id == @challenge.user_id %>
+        <%= link_to 'Modifier votre challenge', edit_challenge_path(@challenge), class: "btn btn-success" %>  |  
+        <%= link_to 'Supprimer votre challenge', challenge_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2 style="padding-bottom: 30px;">Les Participants du challenge : " <%= @challenge.title %> "</h2>
+
+    <%= render 'participations' %>
+  
+  <hr>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Vous venez de réaliser le challenge ? <small>Inscrivez votre message et validez !</small></h2>
+      <p>Vous ne pouvez valider qu'une fois, le système de validation vous renverra une erreur si cous essayez de tricher !!!</p>
+    </div>
+  </div>
+
+  <%= render 'participations/form' %>
+
+</div>
+
+
+
+
+
+
+

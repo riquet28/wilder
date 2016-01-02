@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  expires_at: 2015-12-28 23:23:48
+  points: 1
+
+two:
+  title: MyString
+  description: MyText
+  expires_at: 2015-12-28 23:23:48
+  points: 1

@@ -5,9 +5,13 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :posts
 
-  get 'user/index'
+  resources :user
   
   resources :offres
+  
+  resources :challenges do
+    resources :participations
+  end
 
   resources :conversations, only: [:index, :show, :destroy] do
     member do

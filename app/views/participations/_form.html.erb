@@ -1,0 +1,15 @@
+<div class="row" style="margin-bottom: 75px;">
+  <%= bootstrap_form_for([@challenge, @participation]) do |f| %>
+    <div class="col-md-9">
+      <%= f.text_area :message, hide_label: true, placeholder: "Inscrivez votre message..." %>
+    </div>
+    <div class="col-md-3">
+      <%= f.primary "Valider ma participation", class: "pull-right" %>
+    </div>
+  <% end %>
+</div>
+
+
+  
+ 
+

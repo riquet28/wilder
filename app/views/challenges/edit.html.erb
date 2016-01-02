@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">Edition de votre challenge</h1>
+    </div>  
+  </div>
+
+<hr>
+
+  <%= link_to 'Retour au challenge', @challenge, class: "btn btn-primary" %>
+<%= link_to 'Retour à la liste des challenges', challenges_path, class: "btn btn-primary pull-right" %>
+
+<hr>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= render 'form' %>
+  </div>
+</div>
+
+</div>
+
+

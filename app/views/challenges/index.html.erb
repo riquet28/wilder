@@ -1,0 +1,66 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">Jeux : Challenger<br>
+        <small>Défiez, réalisez les challenges de vos amis et récupérez un max de point ! Oserez-vous ???</small>
+      </h1>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Règles du jeu :</h2>
+      <p>
+        Vous relevez les défis de vos amis et vous pouvez les défier aussi. Chaque défi à une date d'expiration et un nombre de points
+        allant de 1 à 100. 100 étant pour les défis les moins réalisables.<b>Lorsque vous avez relevé et UNIQUEMENT RELEVÉ</b> le défi
+        vous pouvez inscrire votre message et vos points vous serons crédités.
+      </p>
+      <h3 style="padding-top: 20px;">Les fonctionnalités à venir : <small>(au fur et à mesure de l'acquisition de mes compétences of course)</small></h3>
+      <p>
+        Pour le moment des fonctionnalités de base sont sur ce jeux, sont prévus: un système d'acceptation du défi ainsi qu'un système de validation
+        par des paires(3), un système de preuve comme quoi on a bien fait le défi, un système de classement des participants etc...
+      </p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Liste des challenges : <%= link_to 'Challenges en cours', challenges_path(:running => true), class: "btn btn-primary" %>  |  
+      <%= link_to 'Challenges expirés', challenges_path(:expired => true), class: "btn btn-info" %>  |  
+      <%= link_to 'Challenges "high_points"', challenges_path(:high_points => 50), class: "btn btn-success" %></h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <%= paginate @challenges %>      
+
+      <%= render @challenges %>
+     
+      <%= paginate @challenges %>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row" style="margin-bottom: 75px;">
+    <div class="col-md-12">
+      <h2>Vous aussi mettez au défi vos amis !<%= link_to 'Créer un défi', new_challenge_path, class: "btn btn-primary pull-right" %></h2>
+    </div>
+  </div>
+ 
+</div><!-- Fin .container-fluid -->
+

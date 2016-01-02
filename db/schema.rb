@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151227013713) do
+ActiveRecord::Schema.define(version: 20151231152406) do
+
+  create_table "challenges", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "expires_at"
+    t.integer  "points"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+  end
 
   create_table "friendships", force: :cascade do |t|
     t.integer  "user_id"
@@ -84,6 +94,15 @@ ActiveRecord::Schema.define(version: 20151227013713) do
     t.string   "language"
   end
 
+  create_table "participations", force: :cascade do |t|
+    t.string   "user_name"
+    t.text     "message"
+    t.integer  "challenge_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "content"
@@ -132,6 +151,7 @@ ActiveRecord::Schema.define(version: 20151227013713) do
     t.datetime "last_ping_at"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "points",                 default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
