@@ -1,54 +1,54 @@
 <div class="container-fluid">
-<div class="row">
-  <div class="col-md-12">
-    <h1 class="text-center">Liste des offres d'emplois et de stages</h1>
-    <p class="text-center">Remplissez un maximum de champs afin de mieux cibler les annonces</p>
-  </div>
-</div>
-
-<hr>
-
-<div class="row">
-  <div class="filterable">
-    <h2>Les Offres <span class="badge"><%= @total_offres %></span></h2>
-    <div class="pull-right">
-      <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filtrer les offres</button>
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">Liste des offres d'emplois et de stages</h1>
+      <p class="text-center">Remplissez un maximum de champs afin de mieux cibler les annonces</p>
     </div>
-    <table class="table table-hover">
-      <thead>
-        <tr class="filters">
-          <th><input type="text" class="form-control" placeholder="N°" disabled></th>
-          <th><input type="text" class="form-control" placeholder="Posté par" disabled></th>
-          <th><input type="text" class="form-control" placeholder="Langage" disabled></th>
-          <th><input type="text" class="form-control" placeholder="Localisation" disabled></th>
-          <th><input type="text" class="form-control" placeholder="Type de Contrat" disabled></th>
-          <th><input type="text" class="form-control" placeholder="Salaire annuel" disabled></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @offres.each do |offre| %>
-          <tr>
-            <td><%= offre.id %></td>
-            <td><%= offre.user_id %></td>
-            <td><%= offre.language %></td>
-            <td><%= offre.localisation %></td>
-            <td><%= offre.contrat %></td>
-            <td><%= offre.salaire %></td>
-            <td><%= link_to "Voir l'offre", offre_path(offre.id), class: "btn btn-primary" %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
   </div>
-</div>
 
-<div class="row">
-  <div class="col-md-12">
-    <%= link_to "Poster une offre", new_offre_path(@offre), class: "btn btn-primary pull-right" %>
-    <%= link_to "Retour accueil", root_path, class: "btn btn-primary" %>
+  <hr>
+
+  <div class="row">
+    <div class="filterable">
+      <h2>Les Offres <span class="badge"><%= @total_offres %></span></h2>
+      <div class="pull-right">
+        <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filtrer les offres</button>
+      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr class="filters">
+            <th><input type="text" class="form-control" placeholder="N°" disabled></th>
+            <th><input type="text" class="form-control" placeholder="Posté par" disabled></th>
+            <th><input type="text" class="form-control" placeholder="Langage" disabled></th>
+            <th><input type="text" class="form-control" placeholder="Localisation" disabled></th>
+            <th><input type="text" class="form-control" placeholder="Type de Contrat" disabled></th>
+            <th><input type="text" class="form-control" placeholder="Salaire annuel" disabled></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @offres.each do |offre| %>
+            <tr>
+              <td><%= offre.id %></td>
+              <td><%= offre.user_id %></td>
+              <td><%= offre.language %></td>
+              <td><%= offre.localisation %></td>
+              <td><%= offre.contrat %></td>
+              <td><%= offre.salaire %></td>
+              <td><%= link_to "Voir l'offre", offre_path(offre.id), class: "btn btn-primary" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
+
+  <div class="row" style="margin-bottom: 75px;">
+    <div class="col-md-12">
+      <%= link_to "Poster une offre", new_offre_path(@offre), class: "btn btn-primary pull-right" %>
+      <%= link_to "Retour accueil", root_path, class: "btn btn-primary" %>
+    </div>
+  </div>
 </div>
 
 

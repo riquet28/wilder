@@ -18,13 +18,16 @@ class User < ActiveRecord::Base
 
   # Membres en ligne
   scope :online, -> { where("last_ping_at > ?", 10.minutes.ago) }
+
   # Trie les pseudos de a -> z en downant la casse
   scope :sort_pseudo_user, -> {order("lower(pseudo) asc")}
+
   # Selectionne les utilisateurs par leur langage
   scope :langage_ruby, -> { select { |user| user.langage == "Ruby" }}
   scope :langage_js, -> { select { |user| user.langage == "Javascript" }}
   scope :langage_php, -> { select { |user| user.langage == "Php" }}
 
+  # Paperclip
   has_attached_file :avatar, styles: {
     medium: "100x100>",
     thumb: "40x40" 
