@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160102204524) do
+ActiveRecord::Schema.define(version: 20160102215549) do
 
   create_table "challenges", force: :cascade do |t|
     t.string   "title"
@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(version: 20160102204524) do
     t.integer  "todo_list_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.datetime "completed_at"
   end
 
   add_index "todo_items", ["todo_list_id"], name: "index_todo_items_on_todo_list_id"
