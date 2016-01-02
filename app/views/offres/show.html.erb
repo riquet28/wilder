@@ -1,18 +1,50 @@
-<h1>Offres#show</h1>
-<p>Find me in app/views/offres/show.html.erb</p>
+<div class="container-fluid">
+  
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">Offres N° <%= @offre.id %> / <%= @offre.language %></h1>
+    </div>
+  </div>
 
-<ul>
-  <li><%= @offre.url %></li>
-  <li><%= @offre.language %></li>
-  <li><%= @offre.salaire %></li>
-  <li><%= @offre.contrat %></li>
-  <li><%= @offre.localisation %></li>
-</ul>
+  <hr>
 
-<%= link_to "Revenir à la liste", offres_path, class: "btn btn-primary" %>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Détails de l'offre</h2>
+    </div>
+  </div>
 
-<!-- Donne la possibilité d'éditer et de supprimer l'annonce si l'on est le propriétaire -->
-<% if current_user.id == @offre.user_id %>
-<%= link_to "Editer l'offre", edit_offre_path, class: "btn btn-primary" %>
-<%= link_to "Supprimer l'offre", offre_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %>
-<% end %>
+  <div class="row well">
+    <div class="col-md-6">
+      <h3>Récupérer ici le résumé (comme sur slack du lien)</h3>
+      <p>Affichage d'une image, titre et truncate text</p>
+    </div>
+    <div class="col-md-6" style="border-left: 1px solid #337ab7;">
+      <ul class="list-unstyled">
+        <li><i class="fa fa-check"></i><b>Votre lien :</b> <%= link_to @offre.url, :target => "_blank" %></li>
+        <li><i class="fa fa-check"></i><b>Langage annonce :</b> <%= @offre.language %></li>
+        <li><i class="fa fa-check"></i><b>Salaire annuel :</b> <%= @offre.salaire %></li>
+        <li><i class="fa fa-check"></i><b>Type de contrat :</b> <%= @offre.contrat %></li>
+        <li><i class="fa fa-check"></i><b>Localisation de l'offre:</b> <%= @offre.localisation %></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= link_to "Revenir à la liste", offres_path, class: "btn btn-primary pull-right" %>
+
+      <!-- Donne la possibilité d'éditer et de supprimer l'annonce si l'on est le propriétaire -->
+      <% if current_user.id == @offre.user_id %>
+      <%= link_to "Editer l'offre", edit_offre_path, class: "btn btn-primary" %>
+      <%= link_to "Supprimer l'offre", offre_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
