@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   root 'posts#index'
 
   devise_for :users, :controllers => { registrations: 'registrations' }
@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   
   resources :challenges do
     resources :participations
+  end
+
+  resources :todo_lists do
+    resources :todo_items
   end
 
   resources :conversations, only: [:index, :show, :destroy] do
