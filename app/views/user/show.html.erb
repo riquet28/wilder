@@ -1,7 +1,63 @@
-<h1>Ses challenges</h1>
+<div class="container-fluid">
 
-<p><b>Vous avez :</b>
-<%= @user.points %> points 
-</p>
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">La page de : <span style="color: #337AB7;"><%= @user.pseudo %></span><%= image_tag @user.avatar.url(:thumb) %></h1>
+    </div>
+  </div>
+  
+  <hr>
 
-<%= render @challenges %>
+  <div class="row">
+    <div class="col-md-4">
+      <p>
+        <b>Nombre de points challenger : </b><%= @user.points %> 
+      </p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-center"><b>Nombre de challenges relévés :</b> <%= @user.participations.count %></p>
+    </div>
+    <div class="col-md-4">
+      <p class="pull-right"><b>Nombre de challenges déposés :</b> <%= @user.challenges.count %></p>
+    </div>
+  </div>
+
+  <hr>
+  
+  <div class="row">
+    <div class="col-md-12">
+       <h2>Les challenges déposés :</h2>
+    </div>
+  </div>
+ 
+  <div class="row">
+    <div class="col-md-12">
+      <%= render @challenges %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Les challenges relevés :<small> (A finir...)</small></h2>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <ul>
+        <% @participations_user.each do |participation| %>
+          <li><%= participation.challenge.title %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row" style="padding-bottom: 75px;">
+    <div class="col-md-12">
+      <%= link_to "Retour aux challenges", challenges_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+
+</div>

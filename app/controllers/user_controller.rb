@@ -13,6 +13,7 @@ class UserController < ApplicationController
 
   def show
     @challenges = @user.challenges
+    @participations_user = @user.participations
   end
 
   def create

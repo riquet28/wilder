@@ -7,34 +7,3 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-########### Utilisateurs ###############
-
-User.create([{ nom: 'Duck',
-              email: 'donald@email.com',
-              pseudo:'donald',
-              prenom: 'Donald',
-              password: 'aaaaaaaa' }])
-              
-User.create([{ nom: 'Mouse',
-              email: 'mickey@email.com',
-              pseudo:'Mickou',
-              prenom: 'Mickey',
-              password: 'aaaaaaaa' }])
-
-User.create([{ nom: 'Stark',
-              email: 'ironman@email.com',
-              pseudo:'ironman',
-              prenom: 'Tony',
-              password: 'aaaaaaaa' }])
-
-User.create([{ nom: 'Banner',
-              email: 'hulk@email.com',
-              pseudo:'Hulk',
-              prenom: 'Bruce',
-              password: 'aaaaaaaa' }])
-
-User.create([{ nom: 'Wayne',
-              email: 'batman@email.com',
-              pseudo:'Batman',
-              prenom: 'Bruce',
-              password: 'aaaaaaaa' }])
