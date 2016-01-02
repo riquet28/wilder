@@ -3,6 +3,7 @@ class UserController < ApplicationController
   before_filter :set_user, only: [:show, :edit, :update]
 
 	def index
+    @titre = "La Promo"
     @users = User.all
     @hash = Gmaps4rails.build_markers(@users) do |user, marker|
       marker.lat user.latitude
