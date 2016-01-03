@@ -1,12 +1,53 @@
-<% @todo_lists.each do |todo_list| %>
-  <div class="index_row clearfix">
-    <h2 class="todo_list_title"><%= link_to todo_list.title, todo_list %></h2>
-    <p class="todo_list_sub_title"><%= todo_list.description %></p>
-  </div>   
-<% end %>
+<div class="container-fluid" style="padding-bottom: 75px;">
+  
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">La "Todo Liste"</h1>
+    </div>
+  </div>
 
-<div class="links">
-  <%= link_to "New Todo List", new_todo_list_path %>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Nota</h3>
+      <p>Pour le moment la TODO LISTE n'est rattachée à aucun utilisateur, d'autres fonctionnalités seront développées incessament
+        sous peu !!!</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Les Todo Listes<span class="badge" style="margin-left: 15px;"><%= @todo_lists.count %></span></h2>
+    </div>
+  </div>
+
+  <% @todo_lists.each do |todo_list| %>
+
+    <div class="row well">
+      <div class="col-md-6">
+        <h3><%= link_to todo_list.title, todo_list %></h3>
+        <p class="todo_list_sub_title"><%= todo_list.description %></p>
+        <%= link_to "Rajouter une tache", todo_list, class: "btn btn-primary" %>
+      </div>
+      <div class="col-md-6">
+        <h4>Liste des taches</h4>
+        <ul class="list-unstyled">
+          <% todo_list.todo_items.each do |item| %>
+            <li><i class="fa fa-check"></i><%= item.content %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div> 
+
+  <% end %>
+
+  <%= link_to "Créer une nouvelle liste", new_todo_list_path, class: "btn btn-primary pull-right" %>
+
 </div>
+
+
 
 

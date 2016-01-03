@@ -1,6 +1,21 @@
-<h1>Editing Todo List</h1>
+<div class="container-fluid">
+  
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1 class="todo_list_title">Edition de : "<span style="color: #337ab7;"><%= @todo_list.title %></span>"</h1>
+      <p class="todo_list_sub_title"><%= @todo_list.description %></p>
+    </div>
+  </div>
 
-<%= render 'form' %>
+  <hr>
 
-<%= link_to 'Show', @todo_list %> |
-<%= link_to 'Back', todo_lists_path %>
+  <div class="row">
+    <div class="col-md-12">
+      <%= render 'form' %>
+    </div>
+  </div>
+
+</div>
+
+
+

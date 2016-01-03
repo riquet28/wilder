@@ -1,12 +1,14 @@
-<%= simple_form_for(@todo_list) do |f| %>
-  <%= f.error_notification %>
+<%= bootstrap_form_for(@todo_list) do |f| %>
+
+  <%= f.alert_message "Please fix the errors below." %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
+    <%= f.text_field :title, label: "Titre" %>
+    <%= f.text_area :description %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.primary  "Valider ma Todo Liste", class: "pull-right" %>
+    <%= link_to 'Retour', todo_lists_path, class: "btn btn-primary" %>
   </div>
 <% end %>

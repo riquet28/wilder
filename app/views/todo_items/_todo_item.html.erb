@@ -1,16 +1,16 @@
-<div class="row clearfix">
+<div class="row">
   
   <% if todo_item.completed? %>
-
-    <div class="complete">
+    
+    <div class="col-md-2">
       <%= link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do %>
         <i style="opacity: 0.4;" class="fa fa-check"></i>
       <% end %>
     </div>
-    <div class="todo_item">
+    <div class="col-md-8">
       <p style="opacity: 0.4;"><strike><%= todo_item.content %></strike></p>
     </div>
-    <div class="trash">
+    <div class="col-md-2">
       <%= link_to todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "Êtes-vous sur ?" } do %>
         <i style="opacity: 0.4;" class="fa fa-trash"></i>
       <% end %>
@@ -18,15 +18,15 @@
 
   <% else %>
 
-    <div class="complete">
+    <div class="col-md-2">
       <%= link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do %>
         <i class="fa fa-check"></i>
       <% end %>
     </div>
-    <div class="todo_item">
+    <div class="col-md-8">
       <p><%= todo_item.content %></p>
     </div>
-    <div class="trash">
+    <div class="col-md-2">
       <%= link_to todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "Êtes-vous sur ?" } do %>
         <i class="fa fa-trash"></i>
       <% end %>
