@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151231152406) do
+ActiveRecord::Schema.define(version: 20160102215549) do
 
   create_table "challenges", force: :cascade do |t|
     t.string   "title"
@@ -120,6 +120,23 @@ ActiveRecord::Schema.define(version: 20151231152406) do
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
+
+  create_table "todo_items", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "todo_list_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.datetime "completed_at"
+  end
+
+  add_index "todo_items", ["todo_list_id"], name: "index_todo_items_on_todo_list_id"
+
+  create_table "todo_lists", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

@@ -1,0 +1,37 @@
+<div class="container-fluid" style="padding-bottom: 75px;">
+  
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2 class="todo_list_title"><%= @todo_list.title %></h2>
+      <p class="todo_list_sub_title"><%= @todo_list.description %></p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= render @todo_list.todo_items %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= render 'todo_items/form' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= link_to 'Editer la Todo Liste', edit_todo_list_path(@todo_list), class: "btn btn-success"  %> |
+      <%= link_to 'Supprimer la liste', todo_list_path(@todo_list), method: :delete, data: { confirm: "Are you sure ?"}, class: "btn btn-danger" %> |
+      <%= link_to 'Retour', todo_lists_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+
+</div>
+
+
+

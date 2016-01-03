@@ -1,0 +1,21 @@
+<%= bootstrap_form_for([@todo_list, @todo_list.todo_items.build]) do |f| %>
+  
+  <%= f.alert_message "Please fix the errors below." %>
+
+  <div class="row">
+
+    <div class="col-md-10">
+      <div class="form-inputs inline-form">
+        <%= f.text_field :content, hide_label: true, placeholder: "Valider" %>
+      </div>
+    </div>
+  
+    <div class="col-md-2">
+      <div class="form-actions pull-right">
+        <%= f.primary "Créer une tache" %>
+      </div>
+    </div>
+
+  </div>
+
+<% end %>

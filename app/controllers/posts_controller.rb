@@ -12,7 +12,6 @@ class PostsController < ApplicationController
     @users_offline = @users - @users_online
     @sort_users = @users_online + @users_offline.sort { |x,y| x.pseudo.downcase <=> y.pseudo.downcase }
     @titre = "Accueil"
-    @lastpost = Post.last(3)
 
   end
 
