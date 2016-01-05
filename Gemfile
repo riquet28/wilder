@@ -49,6 +49,7 @@ gem 'geocoder'
 # Gmaps4rails
 gem 'gmaps4rails'
 gem 'kaminari'
+gem 'puma'
 
 
 # Use jquery as the JavaScript library
