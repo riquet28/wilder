@@ -8,7 +8,7 @@
         <div class="col-md-12 scrollable" style="height: 430px;">
           <% @posts.reverse.each do |post| %>
           <div class="row content-post">
-            <div class="col-md-1 avatar pull-left"><%= image_tag post.user.gravatar_url %>
+            <div class="col-md-1 avatar pull-left"><%= image_tag post.user.gravatar_url(:size => 40) %>
             </div>
             <div class="col-md-11">
               <div class="row">
