@@ -38,7 +38,7 @@ class PostsController < ApplicationController
   def create
     @newpost = Post.new(post_params)
     if @newpost.save
-      flash[:success] = 'Your Post was successfully created.'
+      flash[:success] = 'Votre post a été créé avec succès !'
       redirect_to root_path
     else
       flash[:danger] = 'There was a problem creating the Post.'
