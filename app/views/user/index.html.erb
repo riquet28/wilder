@@ -41,7 +41,7 @@
             <div class="row">
               <% group.each do |user| %>
                 <div class="col-md-2">
-                  <a href="#" data-toggle="tooltip" title="<%= user.pseudo %>"><%= image_tag user.avatar.url(:thumb) %></a>
+                  <a href="#" data-toggle="tooltip" title="<%= user.pseudo %>"><%= image_tag user.gravatar_url %></a>
                 </div>
               <% end %>
             </div>
@@ -55,7 +55,7 @@
             <div class="row">
               <% group.each do |user| %>
                 <div class="col-md-2">
-                  <a href="#" data-toggle="tooltip" title="<%= user.pseudo %>"><%= image_tag user.avatar.url(:thumb) %></a>
+                  <a href="#" data-toggle="tooltip" title="<%= user.pseudo %>"><%= image_tag user.gravatar_url %></a>
                 </div>
               <% end %>
             </div>
@@ -69,7 +69,7 @@
             <div class="row">
               <% group.each do |user| %>
                 <div class="col-md-2">
-                  <a href="#" data-toggle="tooltip" title="<%= user.pseudo %>"><%= image_tag user.avatar.url(:thumb) %></a>
+                  <a href="#" data-toggle="tooltip" title="<%= user.pseudo %>"><%= image_tag user.gravatar.url %></a>
                 </div>
               <% end %>
             </div>
@@ -94,10 +94,8 @@
     <div class="row well">
       <div class="col-md-3">
         <p>
-          <% if current_user.avatar.exists? %>
-            <%= image_tag user.avatar.url(:medium) %>
-          <% end %>
-        </p>
+          <%= image_tag user.gravatar_url %>
+         </p>
         <p>
           <b><i class="fa fa-user"></i><%= user.nom %> <%= user.prenom %></b><br/>
           <i class="fa fa-phone"></i><%= user.telephone %><br/>

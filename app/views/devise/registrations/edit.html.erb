@@ -48,15 +48,6 @@
 
     <hr>
 
-    <h2>Choisir mon avatar</h2>
-    <p>
-      Votre avatar actuel <%= image_tag current_user.avatar.url(:thumb) %>
-    </p>
-
-      <%= f.file_field :avatar, label: "Uploader un nouvel avatar" %>
-
-    <hr>
-
     <h2>Personnaliser mon humeur</h2>
     <p> 
       <%= f.text_field :tag, label: "Votre humeur" %>

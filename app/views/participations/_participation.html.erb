@@ -4,7 +4,7 @@
     <% group.each do |participation| %>
       <div class="col-md-2">
         <div>
-          <%= image_tag participation.user.avatar.url(:medium) %>
+          <%= image_tag participation.user.gravatar_url %>
           <h4><%= link_to participation.user.pseudo, participation.user  %></h4>
           <p><%= participation.message %></p>
         </div>

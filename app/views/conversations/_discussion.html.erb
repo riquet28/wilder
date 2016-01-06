@@ -7,7 +7,7 @@
         <div class="media">
           <% message = receipt.message %>
           <div class="media-left">
-            <%= image_tag message.sender.avatar.url(:thumb) %>
+            <%= image_tag message.sender.gravatar_url %>
           </div>
 
           <div class="media-body">

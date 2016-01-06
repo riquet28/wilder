@@ -31,8 +31,6 @@ gem 'bootstrap_form'
 gem 'simple_form'
 # Bootstrap Modal
 gem 'bootstrap-modal-rails'
-# Use paperclip to upload files
-gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'babosa'
 # Mailboxer pour les messages privés
 gem "mailboxer"
@@ -48,8 +46,12 @@ gem 'font-awesome-sass', '~> 4.2.0'
 gem 'geocoder'
 # Gmaps4rails
 gem 'gmaps4rails'
+# Kaminari
 gem 'kaminari'
+# Puma
 gem 'puma'
+# Gravtastic
+gem 'gravtastic'
 
 
 # Use jquery as the JavaScript library
