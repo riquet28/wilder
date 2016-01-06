@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include Gravtastic
+  gravtastic
 	
   has_many :posts, :dependent => :destroy, :foreign_key => "user_id"
   has_many :offres
@@ -26,14 +28,6 @@ class User < ActiveRecord::Base
   scope :langage_ruby, -> { select { |user| user.langage == "Ruby" }}
   scope :langage_js, -> { select { |user| user.langage == "Javascript" }}
   scope :langage_php, -> { select { |user| user.langage == "Php" }}
-
-  # Paperclip
-  has_attached_file :avatar, styles: {
-    medium: "100x100>",
-    thumb: "40x40" 
-  }, 
-    default_url: "/images/:style/missing.jpg" 
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   # Mailboxer functionality
   acts_as_messageable

@@ -4,7 +4,7 @@
 
     <!-- Lien menant à la modale -->
     <a href="#" class="lien-carte-visite" data-toggle="modal" data-target="#myModal<%=user.id%>">
-      <%= image_tag user.avatar.url(:thumb) %><%= pseudo_mail(user) %><%= en_ligne(user) %>
+      <%= image_tag user.gravatar_url %><%= pseudo_mail(user) %><%= en_ligne(user) %>
     </a>
 
     <!-- Modale -->
@@ -13,7 +13,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
-            <h3 id="myModalLabel"><%= image_tag(user.avatar.url(:thumb), :class => "avatar-post") %> Carte de visite de <%= user.pseudo %></h3>
+            <h3 id="myModalLabel"><%= image_tag user.gravatar_url %> Carte de visite de <%= user.pseudo %></h3>
           </div>
           <div class="modal-body">
             <div class="row">
