@@ -232,9 +232,15 @@ footer {
   }
 
   .form-post {
-    padding: 10px;
     background-color: #f1f1f1;
     border-radius: 6px;
+
+      input {
+        margin-top: 15px;
+      }
+      form {
+        margin-top: 15px;
+      }
   }
 
   .scrollable {
@@ -341,8 +347,9 @@ footer {
 
 .content-post {
   background-color: #fff;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  margin-right: 0px;
+  padding-top: 7px;
+  padding-bottom: 7px;
   border-radius: 6px;
 }
 
@@ -361,6 +368,7 @@ footer {
 .humeur {
   color: #9e9ea6;
   font-size: 0.9em;
+  font-weight: 300;
   font-style: italic;
 }
 .content-message {
