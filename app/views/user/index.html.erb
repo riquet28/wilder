@@ -31,52 +31,7 @@
         <div id="map" style='width: 100%; height: 400px;'></div>
       </div>
     </div>
-    <div class="col-md-4">
-      <h4 class="text-center">Les Wilders par langage</h4>
-      <hr>
-      <div class="row">
-        <div class="col-md-12">
-          <h5>Les rubystes : </h5>
-          <% @users.langage_ruby.in_groups_of(6, false).each do |group| %>
-            <div class="row">
-              <% group.each do |user| %>
-                <div class="col-md-2">
-                  <a href="#" data-toggle="tooltip" title="<%= user.pseudo %>"><%= image_tag user.gravatar_url %></a>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <h5>Les Javascripts : </h5>
-          <% @users.langage_js.in_groups_of(6, false).each do |group| %>
-            <div class="row">
-              <% group.each do |user| %>
-                <div class="col-md-2">
-                  <a href="#" data-toggle="tooltip" title="<%= user.pseudo %>"><%= image_tag user.gravatar_url %></a>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <h5>Les Phpistes : </h5>
-          <% @users.langage_php.in_groups_of(6, false).each do |group| %>
-            <div class="row">
-              <% group.each do |user| %>
-                <div class="col-md-2">
-                  <a href="#" data-toggle="tooltip" title="<%= user.pseudo %>"><%= image_tag user.gravatar.url %></a>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
+    
 
   </div>
 
