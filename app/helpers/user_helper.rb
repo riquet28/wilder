@@ -22,4 +22,8 @@ module UserHelper
     end
   end
 
+  def nb_votes(current_user)
+    current_user.votes.size
+  end
+
 end

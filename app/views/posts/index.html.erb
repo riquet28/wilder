@@ -24,20 +24,15 @@
                 <div class="col-md-12 content-message">
                   <p>
                     <%= post.content %>
-                  <%= link_to unlike_post_path(post), method: :put do %>
-                    <button type="button" class="btn btn-info pull-right" aria-label="Left Align">
+                    <%= link_to unlike_post_path(post), method: :put, class: "pull-right" do %>
                       <i class="fa fa-thumbs-down"></i>
                       <span class="badge"><%= post.get_downvotes.size %></span>
-                    </button>
-                  <% end %>
-                  <%= link_to like_post_path(post), method: :put do %>
-                    <button type="button" class="btn btn-info pull-right" aria-label="Left Align">
+                    <% end %>
+                    <%= link_to like_post_path(post), method: :put, class: "pull-right" do %>
                       <i class="fa fa-thumbs-up"></i>
                       <span class="badge"><%= post.get_upvotes.size %></span>
-                    </button>
-                  <% end %>
+                    <% end %>
                   </p>
-                  
                 </div>
               </div>
             </div>
