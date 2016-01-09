@@ -37,4 +37,6 @@ module ApplicationHelper
     current_user.offres.count
   end
 
+  
+
 end

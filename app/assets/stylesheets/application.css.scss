@@ -374,6 +374,16 @@ footer {
 .content-message {
   padding-left: 0;
   word-wrap: break-word;
+  a {
+    .fa {
+      margin-right: 0;
+      margin-left: 15px;
+      color: #9e9ea6;
+    }
+  }
+  a:hover {
+    text-decoration: none;
+  }
 }
 .content-message p {
   padding: 0;
