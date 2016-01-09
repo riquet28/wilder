@@ -34,12 +34,8 @@ gem 'bootstrap-modal-rails'
 gem 'babosa'
 # Mailboxer pour les messages privés
 gem "mailboxer"
-# Gravatar
-gem 'gravatar_image_tag'
 gem 'chosen-rails'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
-gem 'will_paginate'
-gem 'bootstrap-will_paginate'
 # Font Awesome
 gem 'font-awesome-sass', '~> 4.2.0'
 # Geocoder
@@ -52,6 +48,8 @@ gem 'kaminari'
 gem 'puma'
 # Gravtastic
 gem 'gravtastic'
+# Act as votable
+gem 'acts_as_votable', '~> 0.10.0'
 
 
 # Use jquery as the JavaScript library

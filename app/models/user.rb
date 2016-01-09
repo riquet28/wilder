@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   include Gravtastic
   gravtastic
 	
+  # Acts_as_vatable
+  acts_as_voter
+
   has_many :posts, :dependent => :destroy, :foreign_key => "user_id"
   has_many :offres
   has_many :participations, :dependent => :destroy, :foreign_key => "user_id"

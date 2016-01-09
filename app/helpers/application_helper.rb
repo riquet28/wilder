@@ -37,4 +37,7 @@ module ApplicationHelper
     current_user.offres.count
   end
 
+  # def nb_votes_like(current_user)
+    
+  # end
 end
