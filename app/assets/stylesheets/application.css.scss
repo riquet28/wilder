@@ -72,6 +72,17 @@ h2 {
   padding-bottom: 20px;
 }
 
+#notice_wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  font-weight: 700;
+
+  .alert .notice {
+    margin: 0;
+  }
+}
 
 /****************** $FOOTER ********************/
 /***********************************************/
@@ -149,28 +160,28 @@ footer {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48;
-  text-align: left;
+  text-align: center;
  }
 
 .alert-alert {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48;
-  text-align: left;
+  text-align: center;
  }
 
 .alert-success {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #468847;
-  text-align: left;
+  text-align: center;
  }
 
 .alert-notice {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #468847;
-  text-align: left;
+  text-align: center;
  }
 
 /******************* Icones ********************/

@@ -22,4 +22,7 @@
 //= require gmaps/google
 //= require_tree .
 
+// Script barre de progression 
 Turbolinks.enableProgressBar();
+
+
