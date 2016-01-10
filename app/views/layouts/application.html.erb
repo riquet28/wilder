@@ -12,10 +12,17 @@
 <!-- Pas très propre!!! Voir pour changer!!! -->
 <!-- ####################################### -->
 
+<div id="notice_wrapper" class="text-center">
+  <% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: "alert alert-#{name}" %>
+  <% end %>
+</div>
+
 <% if user_signed_in? %>
 
   <body>
-    <%= render 'shared/navigation' %>
+
+  <%= render 'shared/navigation' %>
 
   <div class="container-fluid" id="content">
 
@@ -35,13 +42,6 @@
 
     <section class="section-droite">
       <div class="col-md-10" style="margin-left: 16.6%;">
-        <div class="row">
-          <div class="col-xs-12">
-            <% flash.each do |name, msg| -%>
-            <%= content_tag :div, msg, class: "alert alert-#{name}" %>
-            <% end -%>
-          </div>
-        </div>
 
         <%= yield %>
 
@@ -55,15 +55,6 @@
   <body id="connexion">
     <%= render 'shared/navconnexion' %> 
     <div class="container-fluid">
-    
-      <div class="row">
-        <div class="col-xs-12">
-          <% flash.each do |name, msg| -%>
-          <%= content_tag :div, msg, class: "alert alert-#{name}" %>
-          <% end -%>
-        </div>
-      </div>
-    
           
     <%= yield %>
 

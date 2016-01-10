@@ -22,6 +22,7 @@ module UserHelper
     end
   end
 
+  # Compteur nombre de votes du current_user
   def nb_votes(current_user)
     current_user.votes.size
   end
