@@ -41,7 +41,7 @@
             <div class="row">
               <% group.each do |user| %>
                 <div class="col-md-2">
-                  <a href="#" data-toggle="tooltip" title="<%= user.pseudo %>"><%= image_tag user.gravatar_url %></a>
+                  <a href="#" data-toggle="tooltip" title="<%= user.pseudo %>"><%= image_tag user.gravatar_url(:size => 40) %></a>
                 </div>
               <% end %>
             </div>
@@ -55,7 +55,7 @@
             <div class="row">
               <% group.each do |user| %>
                 <div class="col-md-2">
-                  <a href="#" data-toggle="tooltip" title="<%= user.pseudo %>"><%= image_tag user.gravatar_url %></a>
+                  <a href="#" data-toggle="tooltip" title="<%= user.pseudo %>"><%= image_tag user.gravatar_url(:size => 40) %></a>
                 </div>
               <% end %>
             </div>
@@ -69,7 +69,7 @@
             <div class="row">
               <% group.each do |user| %>
                 <div class="col-md-2">
-                  <a href="#" data-toggle="tooltip" title="<%= user.pseudo %>"><%= image_tag user.gravatar.url %></a>
+                  <a href="#" data-toggle="tooltip" title="<%= user.pseudo %>"><%= image_tag user.gravatar_url(:size => 40) %></a>
                 </div>
               <% end %>
             </div>
