@@ -240,6 +240,15 @@ footer {
     border-radius: 100%;        
   }
 
+
+  h1 {
+    text-shadow: 2px 2px 2px black;
+
+    .fa {
+      margin-right: 15px;
+    }
+  }
+
   .jumbotron {
     background-color: #fff;
     padding-top: 20px;
