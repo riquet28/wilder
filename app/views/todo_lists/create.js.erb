@@ -1,0 +1,6 @@
+$("#mynewtodolist").modal('hide');
+$(".todolist_title").val('');
+$(".todolist_description").val('');
+
+$("#container_todolists").prepend('<%= j render @todo_list %>');
+$("#todolist_<%= @todo_list.id %>").hide().fadeIn(1000);

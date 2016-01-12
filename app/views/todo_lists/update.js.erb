@@ -1,0 +1,8 @@
+$("#myupdatetodolist_<%= @todo_list.id %>").modal('hide');
+
+$("#todolist_<%= @todo_list.id %>").fadeOut(500, function(){
+
+  $(this).remove();
+  $("#container_todolists").prepend('<%= j render @todo_list %>');
+
+});
