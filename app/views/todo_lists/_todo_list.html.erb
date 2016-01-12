@@ -1,0 +1,56 @@
+<div class="col-md-4" id="todolist_<%= todo_list.id %>">
+
+  <div class="panel panel-primary">
+
+    <div class="panel-heading text-center">
+      <h3 class="panel-title"><%= todo_list.title %></h3>
+    </div>
+
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-12">
+          <p><%= todo_list.description %></p>
+        </div>
+      </div>
+      <hr>
+      <%= link_to "<i class='fa fa-eye'></i>Voir".html_safe, todo_list, class: "btn btn-primary" %>
+      <%= link_to 'Supprimer', todo_list, method: :delete, class: "btn btn-danger pull-right", remote: true %>
+      <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#myupdatetodolist_<%= todo_list.id %>">
+      Modifier
+      </button>
+    </div>
+
+  </div><!-- Fin .panel -->
+
+  <!-- Modale formulaire édtion de la todolist -->
+  <%= bootstrap_form_for(todo_list, :method => :put, remote: true) do |f| %>
+    <div class="modal fade" id="myupdatetodolist_<%= todo_list.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title pull-left" id="myModalLabel">Modifier ma liste</h4>
+          </div>
+
+          <div class="modal-body">
+            <div class="field">
+              <%= f.text_field :title, label: "Modifier le titre", class: "form-control" %>
+            </div>
+            <div class="field">
+              <%= f.text_area :description, label: "Modifier la description", class: "form-control todolist_descrition" %>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+            <%= f.primary "Mettre à jour" %>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</div><!-- Fin .col-md-4 -->
+

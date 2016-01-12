@@ -2,7 +2,8 @@
   
   <div class="row">
     <div class="col-md-12">
-      <h1 class="text-center">La "Todo Liste"</h1>
+      <h1 class="text-center" style="text-shadow: 2px 2px 2px #f1f1f1;"><i class="fa fa-list-ul"></i>Les Todo Listes<br>
+        <small>Quand on a pas de tête... On a des listes !!!</small></h1>
     </div>
   </div>
 
@@ -12,7 +13,7 @@
     <div class="col-md-12">
       <h3>Nota</h3>
       <p>Pour le moment la TODO LISTE n'est rattachée à aucun utilisateur, d'autres fonctionnalités seront développées incessament
-        sous peu !!!</p>
+        sous peu !!! Toutefois l'AJAX est activé et tout le CRUD peut se faire sans aucun rechargement de page</p>
     </div>
   </div>
 
@@ -20,33 +21,29 @@
 
   <div class="row">
     <div class="col-md-12">
-      <h2>Les Todo Listes<span class="badge" style="margin-left: 15px;"><%= @todo_lists.count %></span></h2>
+      <h2>Mes listes
+        <span class="badge"><%= @todo_lists.count %></span>
+        <!-- Bouton ouvrant la modale -->
+        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#mynewtodolist">
+        Créer une liste
+        </button>
+      </h2>
     </div>
   </div>
+  
+  <!-- Liste des todolists -->
+  <div class="row" id="container_todolists">
+    <%= render @todo_lists %>
+  </div>
 
-  <% @todo_lists.each do |todo_list| %>
+  <!-- Modale incluant le formulaire -->
+  <div class="row">
+    <%= render 'form' %>
+  </div>
 
-    <div class="row well">
-      <div class="col-md-6">
-        <h3><%= link_to todo_list.title, todo_list %></h3>
-        <p class="todo_list_sub_title"><%= todo_list.description %></p>
-        <%= link_to "Rajouter une tache", todo_list, class: "btn btn-primary" %>
-      </div>
-      <div class="col-md-6">
-        <h4>Liste des taches</h4>
-        <ul class="list-unstyled">
-          <% todo_list.todo_items.each do |item| %>
-            <li><i class="fa fa-check"></i><%= item.content %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div> 
+  
 
-  <% end %>
 
-  <%= link_to "Créer une nouvelle liste", new_todo_list_path, class: "btn btn-primary pull-right" %>
-
-</div>
 
 
 

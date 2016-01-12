@@ -1,14 +1,32 @@
-<%= bootstrap_form_for(@todo_list) do |f| %>
+<!-- Modale formulaire création des todo_list -->
+<%= bootstrap_form_for(@todo_list, remote: true) do |f| %>
 
-  <%= f.alert_message "Please fix the errors below." %>
+  <div class="modal fade" id="mynewtodolist" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
 
-  <div class="form-inputs">
-    <%= f.text_field :title, label: "Titre" %>
-    <%= f.text_area :description %>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Créer votre liste</h4>
+        </div>
+
+        <div class="modal-body">
+          <div class="field">
+            <%= f.text_field :title, label: "Le titre de votre liste", class: "form-control todolist_title" %>
+          </div>
+          <div class="field">
+            <%= f.text_area :description, label: "La description de votre liste", class: "form-control todolist_description" %>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+          <%= f.primary "Créer ma liste", class: "btn btn-primary" %>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.primary  "Valider ma Todo Liste", class: "pull-right" %>
-    <%= link_to 'Retour', todo_lists_path, class: "btn btn-primary" %>
-  </div>
 <% end %>

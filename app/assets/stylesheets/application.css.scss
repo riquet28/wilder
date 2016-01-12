@@ -13,7 +13,6 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "bootstrap-modal";
 @import 'chosen';
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -239,6 +238,15 @@ footer {
     max-width: 40px;
     max-height: 40px;
     border-radius: 100%;        
+  }
+
+
+  h1 {
+    text-shadow: 2px 2px 2px black;
+
+    .fa {
+      margin-right: 15px;
+    }
   }
 
   .jumbotron {
