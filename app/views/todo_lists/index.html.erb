@@ -13,7 +13,7 @@
     <div class="col-md-12">
       <h3>Nota</h3>
       <p>Pour le moment la TODO LISTE n'est rattachée à aucun utilisateur, d'autres fonctionnalités seront développées incessament
-        sous peu !!! Toutefois l'AJAX est activé et tout le CRUD peut se faire sans aucun rechargement de page</p>
+        sous peu !!! Toutefois l'AJAX est activé et tout le CRUD peut se faire sans aucun rechargement de page. Un gros travail sur le JS est à faire !</p>
     </div>
   </div>
 
@@ -31,15 +31,22 @@
     </div>
   </div>
   
-  <!-- Liste des todolists -->
-  <div class="row" id="container_todolists">
-    <%= render @todo_lists %>
+  <% if @todo_lists.count > 0 %>
+    <!-- Liste des todolists -->
+    <div class="row" id="container_todolists">
+      <%= render @todo_lists %>
+    </div>
+  <% else %>
+    <div class="well">
+    <h2 class="text-center">Vous n'avez pas encore de liste</h2>
   </div>
+  <% end %>
+    <!-- Modale incluant le formulaire -->
+    <div class="row">
+      <%= render 'form' %>
+    </div>
 
-  <!-- Modale incluant le formulaire -->
-  <div class="row">
-    <%= render 'form' %>
-  </div>
+</div>
 
   
 

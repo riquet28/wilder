@@ -1,4 +1,4 @@
-<div class="container-fluid col-md-8 col-md-offset-2" style="padding-bottom: 75px;">
+<div class="container-fluid col-md-8 col-md-offset-2">
   
   <div class="row">
     <div class="col-md-12">
@@ -22,7 +22,7 @@
   <div class="panel panel-primary" style="margin-top: 30px;">
 
     <div class="panel-heading text-center">
-      <h2 class="panel-title">Votre liste : <%= @todo_list.title %></h2>
+      <h2 class="panel-title">Votre liste : <%= @todo_list.title %><span class="badge" id="compteur_items"><%= @todo_list.todo_items.size %></span></h2>
     </div>
 
     <div class="panel-body">
@@ -64,13 +64,13 @@
 
   <hr>
 
+</div>
+
+<div class="container-fluid" style="padding-bottom: 75px;">
   <div class="row">
     <div class="col-md-12">
-      <h2>Future place d'une box action ?</h2>
-    </div>
+      <h2 class="text-center">Future place d'une box action ?</h2>
   </div>
- 
-
 </div>
 
 

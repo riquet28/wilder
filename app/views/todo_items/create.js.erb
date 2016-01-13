@@ -1,4 +1,6 @@
 $(".todoitem_title").val('');
 $("#container_todoitems").prepend('<%= j render @todo_item %>');
 $("#todoitem_<%= @todo_item.id %>").hide().fadeIn(1000);
-$("#no_todoitem").css("display","none");
+
+
+
