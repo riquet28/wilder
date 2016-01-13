@@ -1,4 +1,4 @@
-<%= bootstrap_form_for([@todo_list, @todo_list.todo_items.build]) do |f| %>
+<%= bootstrap_form_for([@todo_list, @todo_list.todo_items.build], remote: true) do |f| %>
   
   <%= f.alert_message "Please fix the errors below." %>
 
@@ -6,7 +6,7 @@
 
     <div class="col-md-10">
       <div class="form-inputs inline-form">
-        <%= f.text_field :content, hide_label: true, placeholder: "Valider" %>
+        <%= f.text_field :content, hide_label: true, placeholder: "Ecrivez votre tache ici", class: "todoitem_title" %>
       </div>
     </div>
   
