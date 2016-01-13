@@ -11,16 +11,16 @@ class TodoItemsController < ApplicationController
   def destroy
     @todo_item = @todo_list.todo_items.find(params[:id])
     if @todo_item.destroy
-      flash[:success] = "Todo List Item was deleted !"
+      flash[:success] = "Votre tache a été supprimée !"
     else
-      flash[:error] = "Todo List Item could not be deleted !"
+      flash[:error] = "Votre tache ne peut pas être supprimée !"
     end
     redirect_to @todo_list
   end
 
   def complete
     @todo_item.update_attribute(:completed_at, Time.now)
-    redirect_to @todo_list, notice: "Todo Item completed"
+    redirect_to @todo_list, notice: "Votre tache a été mise à jour !"
   end
 
   private
