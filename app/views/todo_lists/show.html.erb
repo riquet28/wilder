@@ -1,9 +1,9 @@
-<div class="container-fluid" style="padding-bottom: 75px;">
+<div class="container-fluid col-md-8 col-md-offset-2">
   
   <div class="row">
-    <div class="col-md-12 text-center">
-      <h2 class="todo_list_title"><%= @todo_list.title %></h2>
-      <p class="todo_list_sub_title"><%= @todo_list.description %></p>
+    <div class="col-md-12">
+      <h1 class="text-center"><i class="fa fa-list-ol"></i>Ajouter des taches à effectuer<br>
+        <small>Quand on a des listes... il faut des taches !!!</small></h1>
     </div>
   </div>
 
@@ -11,26 +11,66 @@
 
   <div class="row">
     <div class="col-md-12">
-      <%= render @todo_list.todo_items %>
+      <p><b>Nota :</b>Il y a un problème avec l'Ajax qui n'enregistre pas directement dans
+        la base. L'enregistrement se fait qu'au rechargement de la page. A régler lorsque 
+        plus de connaissance en JS.</p>
     </div>
   </div>
 
   <hr>
 
+  <div class="panel panel-primary" style="margin-top: 30px;">
+
+    <div class="panel-heading text-center">
+      <h2 class="panel-title">Votre liste : <%= @todo_list.title %><span class="badge" id="compteur_items"><%= @todo_list.todo_items.size %></span></h2>
+    </div>
+
+    <div class="panel-body">
+
+      <div class="row">
+        <div class="col-md-12">
+          <p><b>Description :</b> <%= @todo_list.description %></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12" id="container_todoitems">
+          <% if @todo_list.todo_items.count > 0 %>
+            <%= render @todo_list.todo_items %>
+          <% else %>
+            <h2 class="text-center" id="no_todoitem">Vous n'avez pas de taches en cours.</h2>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <%= render 'todo_items/form' %>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="col-md-12">
+          <%= link_to 'Supprimer cette liste', todo_list_path(@todo_list), method: :delete, data: { confirm: "Are you sure ?"}, class: "btn btn-danger" %>
+          <%= link_to 'Retour aux listes', todo_lists_path, class: "btn btn-primary pull-right" %>
+        </div>
+      </div>
+
+    </div><!-- Fin .panel-body -->
+
+  </div><!-- Fin .panel -->
+
+  <hr>
+
+</div>
+
+<div class="container-fluid" style="padding-bottom: 75px;">
   <div class="row">
     <div class="col-md-12">
-      <%= render 'todo_items/form' %>
-    </div>
+      <h2 class="text-center">Future place d'une box action ?</h2>
   </div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <%= link_to 'Editer la Todo Liste', edit_todo_list_path(@todo_list), class: "btn btn-success"  %> |
-      <%= link_to 'Supprimer la liste', todo_list_path(@todo_list), method: :delete, data: { confirm: "Are you sure ?"}, class: "btn btn-danger" %> |
-      <%= link_to 'Retour', todo_lists_path, class: "btn btn-primary" %>
-    </div>
-  </div>
-
 </div>
 
 
