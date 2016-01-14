@@ -34,9 +34,6 @@
 ************************************************/
 
 
-
-
-
 html {
   height: 100%;
 
@@ -50,7 +47,7 @@ body {
   height: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: #fff;
+  background-image: asset-url('background2.jpg');
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
