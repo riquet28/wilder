@@ -13,9 +13,9 @@
     <div class="collapse navbar-collapse navbar-right">
       <ul class="nav navbar-nav">
         <li class="<%= 'active' if params[:controller] == 'posts' %>"><%= link_to "<i class='fa fa-home'></i>ACCUEIL".html_safe, posts_path %></li>
-        <li class="<%= 'active' if params[:controller] == 'user' %>"><%= link_to "<i class='fa fa-user'></i>MON PROFIL".html_safe, user_path(current_user) %></li>
+        <li class="<%= 'active' if current_page?(user_path(current_user)) %>"><%= link_to "<i class='fa fa-user'></i>MON PROFIL".html_safe, user_path(current_user) %></li>
         <li class="<%= 'active' if params[:controller] == 'conversations' %>"><%= link_to "<i class='fa fa-envelope'></i>MES MESSAGES".html_safe, conversations_path %></li>
-        <li class="<%= 'active' if params[:controller] == 'user' %>"><%= link_to "<i class='fa fa-users'></i>LA PROMO".html_safe, user_index_path %></li>
+        <li class="<%= 'active' if current_page?(user_index_path) %>"><%= link_to "<i class='fa fa-user'></i>LA PROMO".html_safe, user_index_path %></li>
         <li class="<%= 'active' if params[:controller] == 'offres' %>"><%= link_to "<i class='fa fa-briefcase'></i>EMPLOIS/STAGES".html_safe, offres_path %></li>
         <li><%= link_to "<i class='fa fa-sign-out'></i>QUITTER".html_safe, destroy_user_session_path, :method => :delete %></li>                        
       </ul>

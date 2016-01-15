@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :user
+  get '/user/:id' => 'user#show'
   
   resources :offres
   

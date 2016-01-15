@@ -5,7 +5,7 @@ class ChallengesController < ApplicationController
   # GET /challenges
   # GET /challenges.json
   def index
-    @challenges = Challenge
+    @challenges = Challenge.all
     @challenges = @challenges.running if params[:running]
     @challenges = @challenges.expired if params[:expired]
     @challenges = @challenges.high_points if params[:high_points]
@@ -69,6 +69,7 @@ class ChallengesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_challenge
       @challenge = Challenge.find(params[:id])
+      @user = User.find(@challenge.user_id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

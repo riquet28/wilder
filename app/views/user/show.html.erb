@@ -1,17 +1,25 @@
-<div class="container-fluid">
+<div class="container-fluid" style="padding-bottom: 75px;">
 
   <div class="row">
     <div class="col-md-12">
-      <h1 class="text-center">La page de : <span style="color: #337AB7;"><%= @user.pseudo %></span><%= image_tag @user.gravatar_url(:size => 40) %></h1>
+      <h1 class="text-center"><%= image_tag @user.gravatar_url(:size => 40) %><%= @user.pseudo %> : <%= @user.nom %> <span style="color: #337AB7;"><%= @user.prenom %></span><br>
+      <small><%= @user.tag %></small>
+      </h1>
     </div>
   </div>
   
   <hr>
 
   <div class="row">
+    <div class="col-md-12">
+       <h2>Tableau de bord :</h2>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="col-md-4">
       <p>
-        <b>Nombre de points challenger : </b><%= @user.points %> 
+        <b>Nombre de points challenger : </b><%= @user.points %>
       </p>
     </div>
     <div class="col-md-4">
@@ -23,10 +31,24 @@
   </div>
 
   <hr>
+
+  <div class="row">
+    <div class="col-md-12">
+       <h2>Carte de visite :</h2>
+    </div>
+  </div>
+
+  <hr>
   
   <div class="row">
     <div class="col-md-12">
-       <h2>Les challenges déposés :</h2>
+       <h2>Challenger :</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Challenges déposés</h3>
     </div>
   </div>
  
@@ -36,11 +58,9 @@
     </div>
   </div>
 
-  <hr>
-
   <div class="row">
     <div class="col-md-12">
-      <h2>Les challenges relevés :<small> (A finir...)</small></h2>
+      <h3>Challenges relevés :</h3>
     </div>
   </div>
   
@@ -57,6 +77,29 @@
   <div class="row" style="padding-bottom: 75px;">
     <div class="col-md-12">
       <%= link_to "Retour aux challenges", challenges_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-12">
+       <h2>Mes listes :</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <% if @todo_lists.count > 0 %>
+        <!-- Liste des todolists -->
+        <div class="row" id="container_todolists">
+          <%= render @todo_lists %>
+        </div>
+      <% else %>
+        <div class="well">
+          <h2 class="text-center">Vous n'avez pas encore de liste</h2>
+        </div>
+      <% end %>
     </div>
   </div>
 

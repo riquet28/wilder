@@ -4,3 +4,6 @@ $(".todolist_description").val('');
 
 $("#container_todolists").prepend('<%= j render @todo_list %>');
 $("#todolist_<%= @todo_list.id %>").hide().fadeIn(1000);
+
+
+$('#badge_id').innerHTML = parseInt($('#badge_id').innerHTML) + 1;

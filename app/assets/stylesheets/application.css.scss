@@ -19,6 +19,28 @@
 @import "navigation";
 @import "challenges";
 
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+
+    .fa {
+      margin-right: 0;
+    }
+    p {
+      margin: 0;
+    }
+    h4 {
+      margin-bottom: 30px;
+      margin-top: 30px !important;
+    }
+}
+
+.thumbnail img {
+    border-radius: 100%;
+    margin-right: 5px;
+  }
+
 
 /********** A faire *****************/
 
@@ -234,7 +256,7 @@ footer {
   .avatar-post {
     max-width: 40px;
     max-height: 40px;
-    border-radius: 100%;        
+    border-radius: 100%;
   }
 
 
