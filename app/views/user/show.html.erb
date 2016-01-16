@@ -7,7 +7,7 @@
       </h1>
     </div>
   </div>
-  
+
   <hr>
 
   <div class="row">
@@ -30,6 +30,18 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-md-4">
+      <p> <b>Nombre de posts : </b><%= @user.posts.count %></p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-center"><b>Nombre de like/unlike :</b> <%= nb_votes(current_user) %></p>
+    </div>
+    <div class="col-md-4">
+      <p class="pull-right"><b>Nombre d'annonces :</b> <%= nb_offres_user(current_user) %></p>
+    </div>
+  </div>
+
   <hr>
 
   <div class="row">
@@ -38,11 +50,32 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-md-4">
+      <%= logo(@user.langage) %>
+    </div>
+    <div class="col-md-8">
+      <h4>Présentation</h4>
+      <%= @user.description %>
+      <h4>Compétences Web</h4>
+      <%= @user.competence %>
+      <div class="row">
+        <div class="col-md-12">
+          <h4>Me contacter</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6"><%= @user.telephone %></div>
+        <div class="col-md-6"><%= @user.email %></div>
+      </div>
+    </div>
+  </div>
+
   <hr>
   
   <div class="row">
     <div class="col-md-12">
-       <h2>Challenger :</h2>
+       <h2>Challenger :<%= link_to "Retour aux challenges", challenges_path, class: "btn btn-primary pull-right" %></h2>
     </div>
   </div>
 
@@ -51,7 +84,7 @@
       <h3>Challenges déposés</h3>
     </div>
   </div>
- 
+
   <div class="row">
     <div class="col-md-12">
       <%= render @challenges %>
@@ -63,7 +96,7 @@
       <h3>Challenges relevés :</h3>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-md-12">
       <ul>
