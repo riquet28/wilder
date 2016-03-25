@@ -26,17 +26,24 @@ Créer une application de type "réseau social" (Slack, Facebook, Tweeter)
 
 ### Parmis les fonctionnalités développées
 
- #### Effectuées
+### Effectuées
 
-* Un mur commun ou tous les utilisateurs postent leurs messages / ok
-* Un système de messagerie privée / ok
-* Une page edition du profil / ok
+* Un mur commun ou tous les utilisateurs postent leurs messages
+* Un système de messagerie privée
+* Une page edition du profil / A améliorer
 * Un système d'authentification /ok
-* Une page ou les élèves peuvent déposer des annonces emplois/stage /ok
-* L'appartenance à une promotion A ou B / A venir
-* Un système de follow / A venir
-* Une page des posts des utilisateurs que l'on follow / A venir
-* Post dynamique des messages ( Ajax, JS), sans rechargement de page / A venir
+* Une page ou les élèves peuvent déposer des annonces emplois/stage /ok (Amélioration à venir)
+* Un jeu de challenge à relever
+* Un système de votes des posts
+ 
+
+### A venir
+
+* L'appartenance à une promotion A ou B
+* Un système de follow
+* Une page des posts des utilisateurs que l'on follow
+* Post dynamique des messages ( Ajax, JS), sans rechargement de page
+* Mise en place des tests
 
 * D'autre fonctionnlités comme la géolocalisation etc.. sont à l'étude
 
