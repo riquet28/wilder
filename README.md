@@ -11,6 +11,7 @@
 
 * Reprise à zero et développement personnel du projet Wilder, initialement commencé avec 2 autres élèves de l'école
 * Le projet ayant été peu abouti, un investissement supplémentaire était nécessaire.
+* Ce projet projet sera présenté lors du passage de l'examen au titre de développeur.(Edit du 25 mars 2016)
 
 ## Détail du Projet
 
@@ -24,6 +25,8 @@ Créer une application de type "réseau social" (Slack, Facebook, Tweeter)
 * **Relire** et commenter le code avant de fusionner
 
 ### Parmis les fonctionnalités développées
+
+ #### Effectuées
 
 * Un mur commun ou tous les utilisateurs postent leurs messages / ok
 * Un système de messagerie privée / ok
