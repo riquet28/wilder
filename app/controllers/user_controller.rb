@@ -13,8 +13,11 @@ class UserController < ApplicationController
 	end
 
   def show
+    @titre = "Mon Profil"
+    @user = User.find(params[:id])
     @challenges = @user.challenges
     @participations_user = @user.participations
+    @todo_lists = TodoList.all
   end
 
   def create
@@ -40,7 +43,7 @@ class UserController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:nom, :pseudo, :tagline, :introduction, :adresse, :avatar, :latitude, :longitude)
+      params.require(:user).permit(:nom, :prenom, :pseudo, :introduction, :adresse, :avatar, :latitude, :longitude)
     end
 
 

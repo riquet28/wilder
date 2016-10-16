@@ -1,27 +1,42 @@
-<div class="well">
-  <div class="row">
-    <div class="col-md-8">
-      <h3><%= link_to challenge.title, challenge %></h3> 
-    </div>
-    <div class="col-md-4">
-      <h4 class="pull-right">Points : <%= challenge.points %></h4>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <p><b>Description :</b><br><%= challenge.description %></p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <h5>Challenge créé par : "Non encore fonctionnel"</h5>
-    </div>
-    <div class="col-md-6">
-      <h5 class="pull-right">Expire le : <%= challenge.expires_at.strftime("%d %b %Y à %H:%m") %></h5>
+<div class="col-sm-6 col-md-4">
+  <div class="thumbnail">
+      <div class="caption">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- Pas très propre  à changer -->
+            <p><%= image_tag challenge.user.gravatar_url(:size => 20) %><b><%= challenge.user.pseudo %></b></p>
+          </div>
+          <div class="col-md-6">
+             <p class="pull-right"><b>Points :</b><span class="badge"><%= challenge.points %></span></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h4 class="text-center"><%= link_to challenge.title, challenge %></h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+              <b>Description</b><br>
+              <%= challenge.description %>
+            </p>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-12">
+            <p><span class="pull-right">Expire le : <%= challenge.expires_at.strftime("%d %b %Y à %H:%m") %></span>
+              <% if current_user.id == challenge.user_id %>
+                <%= link_to "<i class='fa fa-pencil'></i>".html_safe, edit_challenge_path(challenge), class: "btn btn-success btn-xs" %>
+                <%= link_to "<i class='fa fa-remove'></i>".html_safe, challenge_path(challenge), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+              <% end %>
+            </p>
+          </div>
+        </div>
     </div>
   </div>
 </div>
 
-
-      
-    

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :user, :controllers => { registrations: 'registrations' }
   
   resources :posts do
     member do
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :user
+  get '/user/:id' => 'user#show'
   
   resources :offres
   

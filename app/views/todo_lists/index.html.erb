@@ -22,7 +22,7 @@
   <div class="row">
     <div class="col-md-12">
       <h2>Mes listes
-        <span class="badge"><%= @todo_lists.count %></span>
+        <span class="badge" id="badge_id"><%= @todo_lists.count %></span>
         <!-- Bouton ouvrant la modale -->
         <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#mynewtodolist">
         Créer une liste
@@ -38,7 +38,7 @@
     </div>
   <% else %>
     <div class="well">
-    <h2 class="text-center">Vous n'avez pas encore de liste</h2>
+    <h2 class="text-center" id="titre_js">Vous n'avez pas encore de liste</h2>
   </div>
   <% end %>
     <!-- Modale incluant le formulaire -->
