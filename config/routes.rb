@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :user, :controllers => { registrations: 'registrations' }
   
   resources :posts do
     member do
